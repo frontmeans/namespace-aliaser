@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "Unique namespace aliases for XML, HTML, and CSS names",
   "keywords": [
-    "namespaces",
+    "namespace",
+    "unique-name",
+    "unique-id",
+    "qualified-name",
+    "library",
     "typescript"
   ],
   "homepage": "https://github.com/surol/namespace-aliaser",
