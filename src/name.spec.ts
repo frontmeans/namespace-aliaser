@@ -2,7 +2,10 @@ import {
   compareNames,
   isNameAndNamespace,
   isNameInNamespace,
+  nameAndNamespace,
+  NameInNamespace,
   namesEqual,
+  namespaceOf,
   qualifyCssName,
   qualifyHtmlName,
   qualifyId,
@@ -11,6 +14,7 @@ import {
 } from './name';
 import { NamespaceDef } from './namespace';
 import { NamespaceAliaser, newNamespaceAliaser } from './namespace-aliaser';
+import { DEFAULT__NS } from './default.ns';
 
 describe('isNameAndNamespace', () => {
   it('returns `true` for name with namespace', () => {
@@ -48,6 +52,33 @@ describe('isNameInNamespace', () => {
   });
 });
 
+describe('namespaceOf', () => {
+  it('returns namespace for name with namespace', () => {
+
+    const ns = new NamespaceDef('test/url');
+
+    expect(namespaceOf(['name', ns])).toBe(ns);
+  });
+  it('returns default namespace for string name', () => {
+    expect(namespaceOf('name')).toBe(DEFAULT__NS);
+  });
+});
+
+describe('nameAndNamespace', () => {
+  it('returns the name itself for the name with namespace', () => {
+
+    const name: NameInNamespace = ['some-name', new NamespaceDef('test/url')];
+
+    expect(nameAndNamespace(name)).toBe(name);
+  });
+  it('returns default namespace for string name', () => {
+
+    const name = 'some-name';
+
+    expect(nameAndNamespace(name)).toEqual([name, DEFAULT__NS]);
+  });
+});
+
 describe('namesEqual', () => {
 
   let ns1: NamespaceDef;
@@ -62,12 +93,17 @@ describe('namesEqual', () => {
     expect(namesEqual('foo', 'bar')).toBe(false);
     expect(namesEqual('foo', 'foo')).toBe(true);
   });
+  it('compares string name and the name in default namespace', () => {
+    expect(namesEqual('foo', ['foo', DEFAULT__NS])).toBe(true);
+    expect(namesEqual(['foo', DEFAULT__NS], 'foo')).toBe(true);
+  });
   it('compares string name and name with namespace', () => {
     expect(namesEqual('foo', ['foo', ns1])).toBe(false);
     expect(namesEqual(['foo', ns1], 'foo')).toBe(false);
   });
   it('compares names with namespace', () => {
     expect(namesEqual(['foo', ns1], ['foo', ns1])).toBe(true);
+    expect(namesEqual(['foo', ns1], ['foo', new NamespaceDef(ns1.url, 'other-alias')])).toBe(true);
     expect(namesEqual(['foo', ns1], ['foo', ns2])).toBe(false);
     expect(namesEqual(['bar', ns1], ['foo', ns1])).toBe(false);
   });
@@ -88,7 +124,15 @@ describe('compareNames', () => {
     expect(compareNames('a', 'b')).toBe(-1);
     expect(compareNames('b', 'a')).toBe(1);
   });
-  it('compares string name and name in with namespace', () => {
+  it('compares string name and the name in default namespace', () => {
+    expect(compareNames('foo', ['foo', DEFAULT__NS])).toBe(0);
+    expect(compareNames(['foo', DEFAULT__NS], 'foo')).toBe(0);
+    expect(compareNames('a', ['b', DEFAULT__NS])).toBe(-1);
+    expect(compareNames(['a', DEFAULT__NS], 'b')).toBe(-1);
+    expect(compareNames('b', ['a', DEFAULT__NS])).toBe(1);
+    expect(compareNames(['b', DEFAULT__NS], 'a')).toBe(1);
+  });
+  it('compares string name and name in namespace', () => {
     expect(compareNames('a', ['a', ns1])).toBe(-1);
     expect(compareNames(['a', ns1], 'a')).toBe(1);
   });

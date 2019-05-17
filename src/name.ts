@@ -1,5 +1,6 @@
 import { NameScope, NamespaceDef } from './namespace';
 import { NamespaceAliaser } from './namespace-aliaser';
+import { DEFAULT__NS } from './default.ns';
 
 /**
  * A name in some namespace.
@@ -47,6 +48,29 @@ export function isNameInNamespace(value: any): value is NameInNamespace {
 }
 
 /**
+ * Detects a namespace of the given `name`
+ *
+ * @param name A name to detect namespace of.
+ *
+ * @returns A namespace if the given `name` has it, or [default namespace][[DEFAULT_NS]] otherwise.
+ */
+export function namespaceOf(name: NameInNamespace): NamespaceDef {
+  return typeof name !== 'string' ? name[1] : DEFAULT__NS;
+}
+
+/**
+ * Converts the given `name` name and namespace tuple.
+ *
+ * @param name
+ *
+ * @returns The `name` itself if it has a namespace, or a tuple consisting of `name` and
+ * [default namespace][[DEFAULT_NS]] otherwise.
+ */
+export function nameAndNamespace(name: NameInNamespace): NameAndNamespace {
+  return typeof name !== 'string' ? name : [name, DEFAULT__NS];
+}
+
+/**
  * Checks whether two names are equal to each other.
  *
  * @param first First name to compare.
@@ -56,12 +80,16 @@ export function isNameInNamespace(value: any): value is NameInNamespace {
  */
 export function namesEqual(first: NameInNamespace, second: NameInNamespace): boolean {
   if (typeof first === 'string') {
-    return first === second;
+    return typeof second === 'string' ? first === second : !second[1].url && second[0] === first;
   }
+
+  const [firstName, { url: firstUrl }] = first;
+
   if (typeof second === 'string') {
-    return false;
+    return !firstUrl && firstName === second;
   }
-  return first[0] === second[0] && first[1] === second[1];
+
+  return firstName === second[0] && firstUrl === second[1].url;
 }
 
 /**
@@ -80,13 +108,22 @@ export function compareNames(first: NameInNamespace, second: NameInNamespace): -
     if (typeof second === 'string') {
       return compareStrings(first, second);
     }
+    if (!second[1].url) {
+      return compareStrings(first, second[0]);
+    }
     return -1;
   }
+
+  const [firstName, { url: firstUrl }] = first;
+
   if (typeof second === 'string') {
+    if (!firstUrl) {
+      return compareStrings(firstName, second);
+    }
     return 1;
   }
 
-  return compareStrings(first[1].url, second[1].url) || compareStrings(first[0], second[0]);
+  return compareStrings(firstUrl, second[1].url) || compareStrings(firstName, second[0]);
 }
 
 function compareStrings(first: string, second: string): -1 | 0 | 1 {
