@@ -5,21 +5,21 @@ import { NamespaceDef } from './namespace';
  *
  * [MathML]: https://www.w3.org/Math/
  */
-export const MathML__NS = new NamespaceDef('http://www.w3.org/1998/Math/MathML', 'math', 'mathml');
+export const MathML__NS = /*#__PURE__*/ new NamespaceDef('http://www.w3.org/1998/Math/MathML', 'math', 'mathml');
 
 /**
  * [SVG] namespace definition.
  *
  * [SVG]: https://www.w3.org/Graphics/SVG/
  */
-export const SVG__NS = new NamespaceDef('http://www.w3.org/2000/svg', 'svg');
+export const SVG__NS = /*#__PURE__*/ new NamespaceDef('http://www.w3.org/2000/svg', 'svg');
 
 /**
  * [XHTML] namespace definition.
  *
  * [XHTML]: https://www.w3.org/TR/xhtml1/
  */
-export const XHTML__NS = new NamespaceDef('http://www.w3.org/1999/xhtml', 'xhtml');
+export const XHTML__NS = /*#__PURE__*/ new NamespaceDef('http://www.w3.org/1999/xhtml', 'xhtml');
 
 /**
  * [XML] namespace definition.
@@ -28,7 +28,7 @@ export const XHTML__NS = new NamespaceDef('http://www.w3.org/1999/xhtml', 'xhtml
  *
  * [XML]: https://www.w3.org/XML/1998/namespace
  */
-export const XML__NS = new NamespaceDef('http://www.w3.org/XML/1998/namespace', 'xml');
+export const XML__NS = /*#__PURE__*/ new NamespaceDef('http://www.w3.org/XML/1998/namespace', 'xml');
 
 /**
  * [XML Namespaces] namespace definition.
@@ -37,11 +37,11 @@ export const XML__NS = new NamespaceDef('http://www.w3.org/XML/1998/namespace', 
  *
  * [XML Namespace]: https://www.w3.org/TR/xml-names/#ns-decl
  */
-export const XMLNS__NS = new NamespaceDef('http://www.w3.org/2000/xmlns/', 'xmlns');
+export const XMLNS__NS = /*#__PURE__*/ new NamespaceDef('http://www.w3.org/2000/xmlns/', 'xmlns');
 
 /**
  * [XSL Transformations] namespace definition.
  *
  * [XSL Transformations]: https://www.w3.org/TR/1999/REC-xslt-19991116#xslt-namespace
  */
-export const XSLT__NS = new NamespaceDef('http://www.w3.org/1999/XSL/Transform', 'xsl');
+export const XSLT__NS = /*#__PURE__*/ new NamespaceDef('http://www.w3.org/1999/XSL/Transform', 'xsl');
