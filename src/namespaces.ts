@@ -1,47 +1,38 @@
+/**
+ * @module namespace-aliaser
+ */
 import { NamespaceDef } from './namespace';
 
 /**
- * [MathML] namespace definition.
- *
- * [MathML]: https://www.w3.org/Math/
+ * [MathML](https://www.w3.org/Math/) namespace definition.
  */
 export const MathML__NS = /*#__PURE__*/ new NamespaceDef('http://www.w3.org/1998/Math/MathML', 'math', 'mathml');
 
 /**
- * [SVG] namespace definition.
- *
- * [SVG]: https://www.w3.org/Graphics/SVG/
+ * [SVG](https://www.w3.org/Graphics/SVG/) namespace definition.
  */
 export const SVG__NS = /*#__PURE__*/ new NamespaceDef('http://www.w3.org/2000/svg', 'svg');
 
 /**
- * [XHTML] namespace definition.
- *
- * [XHTML]: https://www.w3.org/TR/xhtml1/
+ * [XHTML](https://www.w3.org/TR/xhtml1/) namespace definition.
  */
 export const XHTML__NS = /*#__PURE__*/ new NamespaceDef('http://www.w3.org/1999/xhtml', 'xhtml');
 
 /**
- * [XML] namespace definition.
+ * [XML](https://www.w3.org/XML/1998/namespace) namespace definition.
  *
  * It is always bound to `xml` prefix.
- *
- * [XML]: https://www.w3.org/XML/1998/namespace
  */
 export const XML__NS = /*#__PURE__*/ new NamespaceDef('http://www.w3.org/XML/1998/namespace', 'xml');
 
 /**
- * [XML Namespaces] namespace definition.
+ * [XML Namespaces](https://www.w3.org/TR/xml-names/#ns-decl) namespace definition.
  *
  * It is always bound to `xmlns` prefix and should never be declared.
- *
- * [XML Namespace]: https://www.w3.org/TR/xml-names/#ns-decl
  */
 export const XMLNS__NS = /*#__PURE__*/ new NamespaceDef('http://www.w3.org/2000/xmlns/', 'xmlns');
 
 /**
- * [XSL Transformations] namespace definition.
- *
- * [XSL Transformations]: https://www.w3.org/TR/1999/REC-xslt-19991116#xslt-namespace
+ * [XSL Transformations](https://www.w3.org/TR/1999/REC-xslt-19991116#xslt-namespace) namespace definition.
  */
 export const XSLT__NS = /*#__PURE__*/ new NamespaceDef('http://www.w3.org/1999/XSL/Transform', 'xsl');

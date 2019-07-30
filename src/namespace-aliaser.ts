@@ -1,3 +1,6 @@
+/**
+ * @module namespace-aliaser
+ */
 import { NamespaceDef } from './namespace';
 
 /**
@@ -5,7 +8,7 @@ import { NamespaceDef } from './namespace';
  *
  * Maps namespaces to their unique aliases.
  *
- * @param ns A definition of namespace to find alias for.
+ * @param ns  A definition of namespace to find alias for.
  *
  * @returns Namespace alias.
  */

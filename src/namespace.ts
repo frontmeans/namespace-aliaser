@@ -1,4 +1,7 @@
 /**
+ * @module namespace-aliaser
+ */
+/**
  * Namespace definition.
  *
  * Namespaces are identified by their URLs.
@@ -27,8 +30,8 @@ export class NamespaceDef {
   /**
    * Constructs new namespace definition.
    *
-   * @param url Unique namespace URL.
-   * @param aliases Preferred namespace aliases. It is expected that each alias is an ASCII letter followed by
+   * @param url  Unique namespace URL.
+   * @param aliases  Preferred namespace aliases. It is expected that each alias is an ASCII letter followed by
    * any number of ASCII letters, digits, `-`, or `_` signs. Aliases starting with `xml` are reserved. Empty alias
    * is reserved for [default namespace][[DEFAULT__NS]].
    */
@@ -45,9 +48,9 @@ export class NamespaceDef {
    * - qualifies `name` in `css` scope as `<name>@<alias>`,
    * - qualifies `name` in `html` and other scopes as `<alias>-<name>`.
    *
-   * @param alias Namespace alias to apply to the name.
-   * @param name A name to convert.
-   * @param scope Name usage scope.
+   * @param alias  Namespace alias to apply to the name.
+   * @param name  A name to convert.
+   * @param scope  Name usage scope.
    *
    * @returns A name qualified with namespace alias.
    */

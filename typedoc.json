@@ -1,0 +1,8 @@
+{
+  "excludeNotExported": true,
+  "mode": "file",
+  "name": "Namespace Aliaser",
+  "out": "./target/typedoc",
+  "theme": "minimal",
+  "tsconfig": "tsconfig.main.json"
+}
