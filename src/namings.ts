@@ -14,7 +14,7 @@ class DefaultNaming extends Naming {
 /**
  * Default naming schema.
  *
- * Prefixes names with namespace aliases separating them by dash.
+ * Prefixes a name with namespace alias separating them by dash.
  *
  * The result looks like `<alias>-<name>`.
  */
@@ -23,7 +23,7 @@ export const default__naming: Naming = /*#__PURE__*/ new DefaultNaming();
 /**
  * HTML elements naming schema.
  *
- * Prefixes names with namespace aliases separating them by dash.
+ * Prefixes a name with namespace alias separating them by dash.
  *
  * The result looks like `<alias>-<name>`.
  */
@@ -40,7 +40,7 @@ class XmlNaming extends Naming {
 /**
  * XML elements naming schema.
  *
- * Prefixes names with namespace aliases separating them by colon.
+ * Prefixes a name with namespace alias separating them by colon.
  *
  * The result looks like `<alias>:<name>`.
  */
@@ -49,7 +49,7 @@ export const xml__naming: Naming = /*#__PURE__*/ new XmlNaming();
 /**
  * Element identifiers naming schema.
  *
- * Prefixes names with namespace aliases separating them by colon.
+ * Prefixes a name with namespace alias separating them by colon.
  *
  * The result looks like `<alias>:<name>`.
  */
@@ -66,7 +66,7 @@ class CssNaming extends Naming {
 /**
  * CSS classes naming scheme.
  *
- * Appends namespace alias as a suffix separated by `@` sign.
+ * Appends namespace alias as a name suffix separated by `@` sign.
  *
  * The result looks like `<name>@<alias>`.
  */

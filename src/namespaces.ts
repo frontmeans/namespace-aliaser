@@ -21,14 +21,14 @@ export const XHTML__NS = /*#__PURE__*/ new NamespaceDef('http://www.w3.org/1999/
 /**
  * [XML](https://www.w3.org/XML/1998/namespace) namespace definition.
  *
- * It is always bound to `xml` prefix.
+ * It is always bound to `xml` alias.
  */
 export const XML__NS = /*#__PURE__*/ new NamespaceDef('http://www.w3.org/XML/1998/namespace', 'xml');
 
 /**
  * [XML Namespaces](https://www.w3.org/TR/xml-names/#ns-decl) namespace definition.
  *
- * It is always bound to `xmlns` prefix and should never be declared.
+ * It is always bound to `xmlns` alias and should never be declared.
  */
 export const XMLNS__NS = /*#__PURE__*/ new NamespaceDef('http://www.w3.org/2000/xmlns/', 'xmlns');
 
