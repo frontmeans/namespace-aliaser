@@ -7,14 +7,8 @@ import {
   namesEqual,
   namespaceOf,
   QualifiedName,
-  qualifyCssName,
-  qualifyHtmlName,
-  qualifyId,
-  qualifyName,
-  qualifyXmlName,
 } from './name';
 import { NamespaceDef } from './namespace';
-import { NamespaceAliaser, newNamespaceAliaser } from './namespace-aliaser';
 
 describe('isNameAndNamespace', () => {
   it('returns `true` for name with namespace', () => {
@@ -134,32 +128,5 @@ describe('compareNames', () => {
     expect(compareNames(['a', ns1], ['a', ns1])).toBe(0);
     expect(compareNames(['a', ns1], ['b', ns1])).toBe(-1);
     expect(compareNames(['a', ns2], ['b', ns1])).toBe(1);
-  });
-});
-
-describe('qualifyName', () => {
-
-  let ns: NamespaceDef;
-  let nsAlias: NamespaceAliaser;
-
-  beforeEach(() => {
-    ns = new NamespaceDef('test/ns', 'test');
-    nsAlias = newNamespaceAliaser();
-  });
-
-  it('does not qualify string name', () => {
-    expect(qualifyName('some-name', nsAlias)).toBe('some-name');
-  });
-  it('qualifies identifier', () => {
-    expect(qualifyId(['some-id', ns], nsAlias)).toBe('test:some-id');
-  });
-  it('qualifies XML name', () => {
-    expect(qualifyXmlName(['some-name', ns], nsAlias)).toBe('test:some-name');
-  });
-  it('qualifies HTML name', () => {
-    expect(qualifyHtmlName(['some-name', ns], nsAlias)).toBe('test-some-name');
-  });
-  it('qualifies CSS class name', () => {
-    expect(qualifyCssName(['some-class', ns], nsAlias)).toBe('some-class@test');
   });
 });

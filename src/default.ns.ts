@@ -9,9 +9,10 @@ class DefaultNs extends NamespaceDef {
     super('');
   }
 
-  name(alias: string, name: string): string {
+  name(_alias: string, name: string): string {
     return name;
   }
+
 }
 
 /**

@@ -1,9 +1,8 @@
 /**
  * @module namespace-aliaser
  */
-import { NameScope, NamespaceDef } from './namespace';
-import { NamespaceAliaser } from './namespace-aliaser';
 import { DEFAULT__NS } from './default.ns';
+import { NamespaceDef } from './namespace';
 
 /**
  * A name qualified with namespace.
@@ -130,77 +129,4 @@ export function compareNames(first: QualifiedName, second: QualifiedName): -1 | 
 
 function compareStrings(first: string, second: string): -1 | 0 | 1 {
   return first < second ? -1 : first > second ? 1 : 0;
-}
-
-/**
- * Qualifies the given `name` by applying namespace alias to it.
- *
- * Utilizes  method for that.
- *
- * @param name  Name to qualify.
- * @param nsAlias  Namespace alias to apply.
- * @param scope  Name usage scope.
- *
- * @returns `name` itself for plain string names, or the result of [[NamespaceDef.qualify]] method applied to the `name`
- * and namespace alias returned by `nsAlias` namespace aliaser.
- */
-export function qualifyName(
-    name: QualifiedName,
-    nsAlias: NamespaceAliaser,
-    scope?: NameScope): string {
-  if (typeof name === 'string') {
-    return name;
-  }
-
-  const [local, ns] = name;
-
-  return ns.name(nsAlias(ns), local, scope);
-}
-
-/**
- * Qualifies the given `id` for its usage as identifier.
- *
- * @param id  An identifier to qualify.
- * @param nsAlias  A namespace aliaser to use.
- *
- * @returns `qualifyName(id, nsAlias, 'id')`.
- */
-export function qualifyId(id: QualifiedName, nsAlias: NamespaceAliaser): string {
-  return qualifyName(id, nsAlias, 'id');
-}
-
-/**
- * Qualifies the given `name` for its usage as XML element name.
- *
- * @param name  A name to qualify.
- * @param nsAlias  A namespace aliaser to use.
- *
- * @returns `qualifyName(id, nsAlias, 'xml')`.
- */
-export function qualifyXmlName(name: QualifiedName, nsAlias: NamespaceAliaser): string {
-  return qualifyName(name, nsAlias, 'xml');
-}
-
-/**
- * Qualifies the given `name` for its usage as HTML element name.
- *
- * @param name  A name to qualify.
- * @param nsAlias  A namespace aliaser to use.
- *
- * @returns `qualifyName(id, nsAlias, 'html')`.
- */
-export function qualifyHtmlName(name: QualifiedName, nsAlias: NamespaceAliaser): string {
-  return qualifyName(name, nsAlias, 'html');
-}
-
-/**
- * Qualifies the given `name` for its usage as CSS class name.
- *
- * @param name  A name to qualify.
- * @param nsAlias  A namespace aliaser to use.
- *
- * @returns `qualifyName(id, nsAlias, 'css')`.
- */
-export function qualifyCssName(name: QualifiedName, nsAlias: NamespaceAliaser): string {
-  return qualifyName(name, nsAlias, 'css');
 }
