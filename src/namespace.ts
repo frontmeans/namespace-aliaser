@@ -1,6 +1,9 @@
 /**
  * @module namespace-aliaser
  */
+import { Naming } from './naming';
+import { default__naming } from './namings';
+
 /**
  * Namespace definition.
  *
@@ -41,39 +44,18 @@ export class NamespaceDef {
   }
 
   /**
-   * Qualifies a local name in this namespace. E.g by prefixing it with namespace alias.
+   * Converts a local `name` belonging to this namespace to simple one according to the given `naming` schema.
    *
-   * By default:
-   * - qualifies `name` in `id` and `xml` scopes as `<alias>:<name>`, which is valid XML and HTML4 ID,
-   * - qualifies `name` in `css` scope as `<name>@<alias>`,
-   * - qualifies `name` in `html` and other scopes as `<alias>-<name>`.
+   * Calls [[Naming.applyAlias]] by default.
    *
    * @param alias  Namespace alias to apply to the name.
    * @param name  A name to convert.
-   * @param scope  Name usage scope.
+   * @param naming  Naming schema to use. {@link default__naming default naming schema} is used when omitted.
    *
-   * @returns A name qualified with namespace alias.
+   * @returns A simple name with this namespace alias applied.
    */
-  qualify(alias: string, name: string, scope?: NameScope): string {
-    switch (scope) {
-      case 'id':
-      case 'xml':
-        return `${alias}:${name}`;
-      case 'css':
-        return `${name}@${alias}`;
-    }
-    return `${alias}-${name}`;
+  name(alias: string, name: string, naming: Naming = default__naming): string {
+    return naming.applyAlias(name, alias, this);
   }
 
 }
-
-/**
- * Name usage scope.
- *
- * The following scopes supported:
- * - `id` for element identifiers,
- * - `xml` for XML element names,
- * - `html` for HTML element names,
- * - `css` for CSS class names.
- */
-export type NameScope = 'id' | 'xml' | 'html' | 'css';

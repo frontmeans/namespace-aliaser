@@ -1,25 +1,27 @@
 import { NamespaceDef } from './namespace';
+import { Naming } from './naming';
+import Mocked = jest.Mocked;
 
 describe('NamespaceDef', () => {
-  describe('localName', () => {
 
-    let ns: NamespaceDef;
+  let ns: NamespaceDef;
+  let naming: Mocked<Naming>;
 
-    beforeEach(() => {
-      ns = new NamespaceDef('test/url');
-    });
+  beforeEach(() => {
+    ns = new NamespaceDef('test/url');
+    naming = {
+      applyAlias: jest.fn((name, alias, _ns) => `${name}/${alias}`),
+      name: jest.fn(),
+    };
+  });
 
-    it('appends suffix to CSS class names', () => {
-      expect(ns.qualify('ns', 'class-name', 'css')).toBe('class-name@ns');
+  describe('name', () => {
+    it('applies naming schema', () => {
+      expect(ns.name('ns', 'local-name', naming)).toBe('local-name/ns');
+      expect(naming.applyAlias).toHaveBeenCalledWith('local-name', 'ns', ns);
     });
-    it('prefixes ID', () => {
-      expect(ns.qualify('ns', 'id', 'id')).toBe('ns:id');
-    });
-    it('prefixes XML name', () => {
-      expect(ns.qualify('ns', 'name', 'xml')).toBe('ns:name');
-    });
-    it('prefixes other names', () => {
-      expect(ns.qualify('ns', 'element-name')).toBe('ns-element-name');
+    it('applies default naming schema when omitted', () => {
+      expect(ns.name('ns', 'local-name')).toBe('ns-local-name');
     });
   });
 

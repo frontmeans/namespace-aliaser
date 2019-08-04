@@ -8,7 +8,7 @@ describe('DEFAULT__NS', () => {
   });
   describe('qualify', () => {
     it('does not qualify names', () => {
-      expect(DEFAULT__NS.qualify('alias', 'some-name')).toBe('some-name');
+      expect(DEFAULT__NS.name('alias', 'some-name')).toBe('some-name');
     });
   });
 });
