@@ -41,7 +41,7 @@ export class NamespaceDef {
   }
 
   /**
-   * Qualifies a local name in this namespace. E.g by prefixing it with namespace alias.
+   * Converts a local `name` belonging to this namespace to simple one according to the given naming schema.
    *
    * By default:
    * - qualifies `name` in `id` and `xml` scopes as `<alias>:<name>`, which is valid XML and HTML4 ID,
@@ -54,7 +54,7 @@ export class NamespaceDef {
    *
    * @returns A name qualified with namespace alias.
    */
-  qualify(alias: string, name: string, scope?: NameScope): string {
+  name(alias: string, name: string, scope?: NameScope): string {
     switch (scope) {
       case 'id':
       case 'xml':

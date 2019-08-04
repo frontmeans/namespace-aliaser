@@ -10,16 +10,16 @@ describe('NamespaceDef', () => {
     });
 
     it('appends suffix to CSS class names', () => {
-      expect(ns.qualify('ns', 'class-name', 'css')).toBe('class-name@ns');
+      expect(ns.name('ns', 'class-name', 'css')).toBe('class-name@ns');
     });
     it('prefixes ID', () => {
-      expect(ns.qualify('ns', 'id', 'id')).toBe('ns:id');
+      expect(ns.name('ns', 'id', 'id')).toBe('ns:id');
     });
     it('prefixes XML name', () => {
-      expect(ns.qualify('ns', 'name', 'xml')).toBe('ns:name');
+      expect(ns.name('ns', 'name', 'xml')).toBe('ns:name');
     });
     it('prefixes other names', () => {
-      expect(ns.qualify('ns', 'element-name')).toBe('ns-element-name');
+      expect(ns.name('ns', 'element-name')).toBe('ns-element-name');
     });
   });
 

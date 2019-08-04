@@ -6,18 +6,18 @@ import { NamespaceAliaser } from './namespace-aliaser';
 import { DEFAULT__NS } from './default.ns';
 
 /**
- * A name in some namespace.
+ * A name qualified with namespace.
  *
  * This can be either:
- * - a simple non-empty name string, which means a name in the default namespace, or
+ * - a simple name string, which means a name in default namespace, or
  * - a name+namespace tuple.
  */
-export type NameInNamespace = string | NameAndNamespace;
+export type QualifiedName = string | NameAndNamespace;
 
 /**
- * A name and namespace tuple.
+ * A local name and namespace tuple.
  *
- * Consists of non-empty name and namespace definition this name belongs to.
+ * Consists of a local name string and namespace definition this name belongs to.
  */
 export type NameAndNamespace = readonly [string, NamespaceDef];
 
@@ -33,12 +33,11 @@ export function isNameAndNamespace(value: any): value is NameAndNamespace {
   return Array.isArray(value)
       && value.length === 2
       && typeof value[0] === 'string'
-      && !!value[0]
       && value[1] instanceof NamespaceDef;
 }
 
 /**
- * Checks whether the given `value` is a name in some namespace.
+ * Checks whether the given `value` is a qualified name.
  *
  * @param value  A value to check.
  *
@@ -46,42 +45,42 @@ export function isNameAndNamespace(value: any): value is NameAndNamespace {
  * where the first element is a non-empty string, and the second element is an instance of [[NamespaceDef]].
  * Or `false` otherwise.
  */
-export function isNameInNamespace(value: any): value is NameInNamespace {
-  return (typeof value === 'string' && !!value) || isNameAndNamespace(value);
+export function isQualifiedName(value: any): value is QualifiedName {
+  return typeof value === 'string' || isNameAndNamespace(value);
 }
 
 /**
  * Detects a namespace of the given `name`
  *
- * @param name  A name to detect namespace of.
+ * @param name  Qualified name to detect namespace of.
  *
  * @returns A namespace if the given `name` has it, or {@link DEFAULT__NS default namespace} otherwise.
  */
-export function namespaceOf(name: NameInNamespace): NamespaceDef {
+export function namespaceOf(name: QualifiedName): NamespaceDef {
   return typeof name !== 'string' ? name[1] : DEFAULT__NS;
 }
 
 /**
- * Converts the given `name` to name and namespace tuple.
+ * Converts the given qualified `name` to name and namespace tuple.
  *
- * @param name  A name to convert.
+ * @param name  Qualified name to convert.
  *
  * @returns The `name` itself if it has a namespace, or a tuple consisting of `name` and
  * {@link DEFAULT__NS default namespace} otherwise.
  */
-export function nameAndNamespace(name: NameInNamespace): NameAndNamespace {
+export function nameAndNamespace(name: QualifiedName): NameAndNamespace {
   return typeof name !== 'string' ? name : [name, DEFAULT__NS];
 }
 
 /**
- * Checks whether two names are equal to each other.
+ * Checks whether two qualified names are equal to each other.
  *
- * @param first  First name to compare.
- * @param second  Second name to compare.
+ * @param first  First qualified name to compare.
+ * @param second  Second qualified name to compare.
  *
  * @returns `true` if both names are equal, or `false` otherwise.
  */
-export function namesEqual(first: NameInNamespace, second: NameInNamespace): boolean {
+export function namesEqual(first: QualifiedName, second: QualifiedName): boolean {
   if (typeof first === 'string') {
     return typeof second === 'string' ? first === second : !second[1].url && second[0] === first;
   }
@@ -96,17 +95,17 @@ export function namesEqual(first: NameInNamespace, second: NameInNamespace): boo
 }
 
 /**
- * Compares two names.
+ * Compares two qualified names.
  *
  * Names in default namespace considered less than other names. Namespaces are compared by their URLs.
  *
- * @param first  First name to compare.
- * @param second  Second name to compare.
+ * @param first  First qualified name to compare.
+ * @param second  Second qualified name to compare.
  *
- * @returns `-1` if `first` name is less than `second` one, `0` if they are equal, or `1` if `first` name is greater
- * than `second` one.
+ * @returns `-1` if the `first` name is less than the `second` one, `0` if they are equal, or `1` if the `first` name
+ * is greater than the `second` one.
  */
-export function compareNames(first: NameInNamespace, second: NameInNamespace): -1 | 0 | 1 {
+export function compareNames(first: QualifiedName, second: QualifiedName): -1 | 0 | 1 {
   if (typeof first === 'string') {
     if (typeof second === 'string') {
       return compareStrings(first, second);
@@ -146,7 +145,7 @@ function compareStrings(first: string, second: string): -1 | 0 | 1 {
  * and namespace alias returned by `nsAlias` namespace aliaser.
  */
 export function qualifyName(
-    name: NameInNamespace,
+    name: QualifiedName,
     nsAlias: NamespaceAliaser,
     scope?: NameScope): string {
   if (typeof name === 'string') {
@@ -155,7 +154,7 @@ export function qualifyName(
 
   const [local, ns] = name;
 
-  return ns.qualify(nsAlias(ns), local, scope);
+  return ns.name(nsAlias(ns), local, scope);
 }
 
 /**
@@ -166,7 +165,7 @@ export function qualifyName(
  *
  * @returns `qualifyName(id, nsAlias, 'id')`.
  */
-export function qualifyId(id: NameInNamespace, nsAlias: NamespaceAliaser): string {
+export function qualifyId(id: QualifiedName, nsAlias: NamespaceAliaser): string {
   return qualifyName(id, nsAlias, 'id');
 }
 
@@ -178,7 +177,7 @@ export function qualifyId(id: NameInNamespace, nsAlias: NamespaceAliaser): strin
  *
  * @returns `qualifyName(id, nsAlias, 'xml')`.
  */
-export function qualifyXmlName(name: NameInNamespace, nsAlias: NamespaceAliaser): string {
+export function qualifyXmlName(name: QualifiedName, nsAlias: NamespaceAliaser): string {
   return qualifyName(name, nsAlias, 'xml');
 }
 
@@ -190,7 +189,7 @@ export function qualifyXmlName(name: NameInNamespace, nsAlias: NamespaceAliaser)
  *
  * @returns `qualifyName(id, nsAlias, 'html')`.
  */
-export function qualifyHtmlName(name: NameInNamespace, nsAlias: NamespaceAliaser): string {
+export function qualifyHtmlName(name: QualifiedName, nsAlias: NamespaceAliaser): string {
   return qualifyName(name, nsAlias, 'html');
 }
 
@@ -202,6 +201,6 @@ export function qualifyHtmlName(name: NameInNamespace, nsAlias: NamespaceAliaser
  *
  * @returns `qualifyName(id, nsAlias, 'css')`.
  */
-export function qualifyCssName(name: NameInNamespace, nsAlias: NamespaceAliaser): string {
+export function qualifyCssName(name: QualifiedName, nsAlias: NamespaceAliaser): string {
   return qualifyName(name, nsAlias, 'css');
 }

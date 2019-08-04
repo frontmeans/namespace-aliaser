@@ -9,7 +9,7 @@ class DefaultNs extends NamespaceDef {
     super('');
   }
 
-  qualify(alias: string, name: string): string {
+  name(alias: string, name: string): string {
     return name;
   }
 }

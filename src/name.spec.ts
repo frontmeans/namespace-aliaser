@@ -1,27 +1,24 @@
+import { DEFAULT__NS } from './default.ns';
 import {
   compareNames,
   isNameAndNamespace,
-  isNameInNamespace,
+  isQualifiedName,
   nameAndNamespace,
-  NameInNamespace,
   namesEqual,
   namespaceOf,
+  QualifiedName,
   qualifyCssName,
   qualifyHtmlName,
   qualifyId,
   qualifyName,
-  qualifyXmlName
+  qualifyXmlName,
 } from './name';
 import { NamespaceDef } from './namespace';
 import { NamespaceAliaser, newNamespaceAliaser } from './namespace-aliaser';
-import { DEFAULT__NS } from './default.ns';
 
 describe('isNameAndNamespace', () => {
   it('returns `true` for name with namespace', () => {
     expect(isNameAndNamespace(['foo', new NamespaceDef('test/ns')])).toBe(true);
-  });
-  it('returns `false` for empty name with namespace', () => {
-    expect(isNameAndNamespace(['', new NamespaceDef('test/ns')])).toBe(false);
   });
   it('returns `false` when array is too long', () => {
     expect(isNameAndNamespace(['foo', new NamespaceDef('test/ns'), 'bar'])).toBe(false);
@@ -37,18 +34,15 @@ describe('isNameAndNamespace', () => {
   });
 });
 
-describe('isNameInNamespace', () => {
+describe('isQualifiedName', () => {
   it('returns `true` for name with namespace', () => {
-    expect(isNameInNamespace(['foo', new NamespaceDef('test/ns')])).toBe(true);
+    expect(isQualifiedName(['foo', new NamespaceDef('test/ns')])).toBe(true);
   });
   it('returns `true` for simple string name', () => {
-    expect(isNameInNamespace('foo')).toBe(true);
-  });
-  it('returns `false` for empty string', () => {
-    expect(isNameInNamespace('')).toBe(false);
+    expect(isQualifiedName('foo')).toBe(true);
   });
   it('returns `false` for everything else', () => {
-    expect(isNameInNamespace(['foo', 'bar'])).toBe(false);
+    expect(isQualifiedName(['foo', 'bar'])).toBe(false);
   });
 });
 
@@ -67,7 +61,7 @@ describe('namespaceOf', () => {
 describe('nameAndNamespace', () => {
   it('returns the name itself for the name with namespace', () => {
 
-    const name: NameInNamespace = ['some-name', new NamespaceDef('test/url')];
+    const name: QualifiedName = ['some-name', new NamespaceDef('test/url')];
 
     expect(nameAndNamespace(name)).toBe(name);
   });
