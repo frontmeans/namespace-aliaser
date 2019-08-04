@@ -7,12 +7,14 @@ import { NamespaceDef } from './namespace';
  * Namespace aliaser function interface.
  *
  * Maps namespaces to their unique aliases.
- *
+ */
+export type NamespaceAliaser =
+/**
  * @param ns  A definition of namespace to find alias for.
  *
  * @returns Namespace alias.
  */
-export type NamespaceAliaser = (ns: NamespaceDef) => string;
+    (ns: NamespaceDef) => string;
 
 /**
  * Creates a namespace aliaser.

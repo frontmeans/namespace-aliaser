@@ -49,9 +49,9 @@ export function isQualifiedName(value: any): value is QualifiedName {
 }
 
 /**
- * Detects a namespace of the given `name`
+ * Detects a namespace of the given qualified `name`
  *
- * @param name  Qualified name to detect namespace of.
+ * @param name  Qualified name to detect a namespace of.
  *
  * @returns A namespace if the given `name` has it, or {@link DEFAULT__NS default namespace} otherwise.
  */
@@ -60,7 +60,7 @@ export function namespaceOf(name: QualifiedName): NamespaceDef {
 }
 
 /**
- * Converts the given qualified `name` to name and namespace tuple.
+ * Converts the given qualified `name` to local name and namespace tuple.
  *
  * @param name  Qualified name to convert.
  *
