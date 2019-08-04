@@ -13,7 +13,7 @@ Maintains unique aliases for namespaces. Supports XML, HTML, and CSS.
 [npm-image]: https://img.shields.io/npm/v/namespace-aliaser.svg?logo=npm
 [npm-url]: https://www.npmjs.com/package/namespace-aliaser
 [ci-image]: https://img.shields.io/circleci/build/github/surol/namespace-aliaser?logo=circleci
-[ci-url]: https://img.shields.io/codecov/c/github/surol/namespace-aliaser?logo=codecov
+[ci-url]: https://circleci.com/gh/surol/namespace-aliaser
 [codecov-image]: https://codecov.io/gh/surol/namespace-aliaser/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/gh/surol/namespace-aliaser
 [github-image]: https://img.shields.io/static/v1?logo=github&label=GitHub&message=project&color=informational
