@@ -22,7 +22,6 @@
   },
   "main": "dist/namespace-aliaser.js",
   "module": "dist/namespace-aliaser.mjs",
-  "esm5": "dist/namespace-aliaser.esm5.js",
   "typings": "index.d.ts",
   "dependencies": {
     "tslib": "^1.10.0"
