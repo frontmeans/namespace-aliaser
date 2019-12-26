@@ -1,6 +1,6 @@
 {
   "name": "namespace-aliaser",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Unique namespace aliases for XML, HTML, and CSS names",
   "keywords": [
     "namespace",
