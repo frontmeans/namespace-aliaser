@@ -3,6 +3,9 @@
  */
 import { NamespaceDef } from './namespace';
 
+/**
+ * @internal
+ */
 class DefaultNs extends NamespaceDef {
 
   constructor() {

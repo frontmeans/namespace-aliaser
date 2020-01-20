@@ -127,6 +127,9 @@ export function compareNames(first: QualifiedName, second: QualifiedName): -1 | 
   return compareStrings(firstUrl, second[1].url) || compareStrings(firstName, second[0]);
 }
 
+/**
+ * @internal
+ */
 function compareStrings(first: string, second: string): -1 | 0 | 1 {
   return first < second ? -1 : first > second ? 1 : 0;
 }
