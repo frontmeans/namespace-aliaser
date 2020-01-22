@@ -1,4 +1,5 @@
 /**
+ * @packageDocumentation
  * @module namespace-aliaser
  */
 import { Naming } from './naming';

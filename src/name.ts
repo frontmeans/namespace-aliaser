@@ -1,4 +1,5 @@
 /**
+ * @packageDocumentation
  * @module namespace-aliaser
  */
 import { DEFAULT__NS } from './default.ns';

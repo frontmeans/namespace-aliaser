@@ -1,4 +1,5 @@
 /**
+ * @packageDocumentation
  * @module namespace-aliaser
  */
 import { NamespaceDef } from './namespace';

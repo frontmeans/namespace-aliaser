@@ -1,4 +1,5 @@
 /**
+ * @packageDocumentation
  * @module namespace-aliaser
  */
 export * from './default.ns';
