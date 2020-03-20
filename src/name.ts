@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module namespace-aliaser
+ * @module @proc7ts/namespace-aliaser
  */
 import { DEFAULT__NS } from './default.ns';
 import { NamespaceDef } from './namespace';

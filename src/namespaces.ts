@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module namespace-aliaser
+ * @module @proc7ts/namespace-aliaser
  */
 import { NamespaceDef } from './namespace';
 

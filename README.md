@@ -10,16 +10,16 @@ Namespace Aliaser
 Maintains unique aliases for namespaces. Supports XML, HTML, and CSS.
 
 
-[npm-image]: https://img.shields.io/npm/v/namespace-aliaser.svg?logo=npm
-[npm-url]: https://www.npmjs.com/package/namespace-aliaser
-[ci-image]: https://img.shields.io/circleci/build/github/surol/namespace-aliaser?logo=circleci
-[ci-url]: https://circleci.com/gh/surol/namespace-aliaser
-[codecov-image]: https://codecov.io/gh/surol/namespace-aliaser/branch/master/graph/badge.svg
-[codecov-url]: https://codecov.io/gh/surol/namespace-aliaser
+[npm-image]: https://img.shields.io/npm/v/@proc7ts/namespace-aliaser.svg?logo=npm
+[npm-url]: https://www.npmjs.com/package/@proc7ts/namespace-aliaser
+[ci-image]: https://img.shields.io/circleci/build/github/proc7ts/namespace-aliaser?logo=circleci
+[ci-url]: https://circleci.com/gh/proc7ts/namespace-aliaser
+[codecov-image]: https://codecov.io/gh/proc7ts/namespace-aliaser/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/proc7ts/namespace-aliaser
 [github-image]: https://img.shields.io/static/v1?logo=github&label=GitHub&message=project&color=informational
-[github-url]: https://github.com/surol/namespace-aliaser
+[github-url]: https://github.com/proc7ts/namespace-aliaser
 [api-docs-image]: https://img.shields.io/static/v1?logo=typescript&label=API&message=docs&color=informational
-[api-docs-url]: https://surol.github.io/namespace-aliaser/
+[api-docs-url]: https://proc7ts.github.io/namespace-aliaser/
 
 
 Usage
@@ -37,7 +37,7 @@ The library ensures that names from different namespaces converted to different 
 unique namespace aliases to them. 
 
 ```typescript
-import { newNamespaceAliaser, NamespaceDef } from 'namespace-aliaser';
+import { newNamespaceAliaser, NamespaceDef } from '@proc7ts/namespace-aliaser';
 
 // Create namespace definition
 const ns1 = new NamespaceDef(
@@ -148,7 +148,7 @@ The `Naming` class has a utility method that allows to convert arbitrary qualifi
 
 So, the example above could be simplified to this:
 ```typescript
-import { default__naming, newNamespaceAliaser, NamespaceDef } from 'namespace-aliaser';
+import { default__naming, newNamespaceAliaser, NamespaceDef } from '@proc7ts/namespace-aliaser';
 
 // Create namespace definition
 const ns1 = new NamespaceDef(

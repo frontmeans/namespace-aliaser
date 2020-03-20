@@ -1,4 +1,8 @@
 {
+  "exclude": [
+    "**/index.ts",
+    "**/*.spec.ts"
+  ],
   "excludeNotExported": true,
   "mode": "file",
   "name": "Namespace Aliaser",
