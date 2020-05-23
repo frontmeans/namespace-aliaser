@@ -35,15 +35,15 @@ describe('NamespaceAliaser', () => {
     const ns = new NamespaceDef('test/url', 'test');
     const alias = nsAliaser(ns);
 
-    expect(nsAliaser(new NamespaceDef('test2/url', 'test'))).toBe(alias + 2);
-    expect(nsAliaser(new NamespaceDef('test3/url', 'test'))).toBe(alias + 3);
+    expect(nsAliaser(new NamespaceDef('test2/url', 'test'))).toBe(`${alias}2`);
+    expect(nsAliaser(new NamespaceDef('test3/url', 'test'))).toBe(`${alias}3`);
   });
   it('generates unique alias if all preferred ones occupied', () => {
     nsAliaser(new NamespaceDef('tst/url', 'tst'));
 
     const alias = nsAliaser(new NamespaceDef('test/url', 'test'));
 
-    expect(nsAliaser(new NamespaceDef('test2/url', 'test', 'tst'))).toBe(alias + 2);
-    expect(nsAliaser(new NamespaceDef('test3/url', 'test', 'tst'))).toBe(alias + 3);
+    expect(nsAliaser(new NamespaceDef('test2/url', 'test', 'tst'))).toBe(`${alias}2`);
+    expect(nsAliaser(new NamespaceDef('test3/url', 'test', 'tst'))).toBe(`${alias}3`);
   });
 });

@@ -29,7 +29,7 @@ export type NameAndNamespace = readonly [string, NamespaceDef];
  * @returns `true` if the given `value` is an array consisting of exactly two elements, where the first element is a
  * non-empty string, and the second element is an instance of [[NamespaceDef]]. Or `false` otherwise.
  */
-export function isNameAndNamespace(value: any): value is NameAndNamespace {
+export function isNameAndNamespace(value: unknown): value is NameAndNamespace {
   return Array.isArray(value)
       && value.length === 2
       && typeof value[0] === 'string'
@@ -45,7 +45,7 @@ export function isNameAndNamespace(value: any): value is NameAndNamespace {
  * where the first element is a non-empty string, and the second element is an instance of [[NamespaceDef]].
  * Or `false` otherwise.
  */
-export function isQualifiedName(value: any): value is QualifiedName {
+export function isQualifiedName(value: unknown): value is QualifiedName {
   return typeof value === 'string' || isNameAndNamespace(value);
 }
 

@@ -56,7 +56,7 @@ export function newNamespaceAliaser(): NamespaceAliaser {
       }
     }
 
-    const generated = mostPreferred + (++nsNumRegistered);
+    const generated = `${mostPreferred}${++nsNumRegistered}`;
 
     aliasesByNs.set(ns.url, generated);
     nsNumPerAlias.set(mostPreferred, nsNumRegistered);
