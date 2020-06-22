@@ -22,7 +22,7 @@
   },
   "main": "dist/namespace-aliaser.js",
   "module": "dist/namespace-aliaser.mjs",
-  "typings": "index.d.ts",
+  "types": "index.d.ts",
   "devDependencies": {
     "@proc7ts/eslint-config": "^2.0.0",
     "@rollup/plugin-commonjs": "^13.0.0",
