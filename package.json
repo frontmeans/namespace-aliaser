@@ -23,6 +23,12 @@
   "main": "dist/namespace-aliaser.js",
   "module": "dist/namespace-aliaser.mjs",
   "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/namespace-aliaser.mjs",
+      "require": "./dist/namespace-aliaser.js"
+    }
+  },
   "devDependencies": {
     "@proc7ts/eslint-config": "^2.0.4",
     "@rollup/plugin-commonjs": "^15.0.0",
