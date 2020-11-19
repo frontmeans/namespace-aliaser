@@ -2,7 +2,7 @@
  * @packageDocumentation
  * @module @proc7ts/namespace-aliaser
  */
-import { NamespaceDef } from './namespace';
+import type { NamespaceDef } from './namespace';
 
 /**
  * Namespace aliaser function interface.

@@ -2,9 +2,9 @@
  * @packageDocumentation
  * @module @proc7ts/namespace-aliaser
  */
-import { QualifiedName } from './name';
-import { NamespaceDef } from './namespace';
-import { NamespaceAliaser } from './namespace-aliaser';
+import type { QualifiedName } from './name';
+import type { NamespaceDef } from './namespace';
+import type { NamespaceAliaser } from './namespace-aliaser';
 
 /**
  * Naming schema is responsible for applying namespace aliases to simple names. E.g. by appending alias as prefix or

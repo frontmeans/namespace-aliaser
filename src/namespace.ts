@@ -2,7 +2,7 @@
  * @packageDocumentation
  * @module @proc7ts/namespace-aliaser
  */
-import { Naming } from './naming';
+import type { Naming } from './naming';
 import { default__naming } from './namings';
 
 /**

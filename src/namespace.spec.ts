@@ -1,5 +1,5 @@
 import { NamespaceDef } from './namespace';
-import { Naming } from './naming';
+import type { Naming } from './naming';
 import Mocked = jest.Mocked;
 
 describe('NamespaceDef', () => {
