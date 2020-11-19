@@ -37,7 +37,7 @@ export class NamespaceDef {
    * @param url  Unique namespace URL.
    * @param aliases  Preferred namespace aliases. It is expected that each alias is an ASCII letter followed by
    * any number of ASCII letters, digits, `-`, or `_` signs. Aliases starting with `xml` are reserved. Empty alias
-   * is reserved for [default namespace][[DEFAULT__NS]].
+   * is reserved for {@link DEFAULT__NS default namespace}.
    */
   constructor(url: string, ...aliases: string[]) {
     this.url = url;
@@ -47,7 +47,7 @@ export class NamespaceDef {
   /**
    * Converts a local `name` belonging to this namespace to simple one according to the given `naming` schema.
    *
-   * Calls [[Naming.applyAlias]] by default.
+   * Calls {@link Naming.applyAlias} by default.
    *
    * @param alias  Namespace alias to apply to the name.
    * @param name  A name to convert.

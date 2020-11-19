@@ -24,6 +24,6 @@ class DefaultNs extends NamespaceDef {
  *
  * This namespace is assumed for names without namespace specified.
  *
- * Its URL is empty. And it does not alter names, i.e. its [[NamespaceDef.name]] method returns the name as is.
+ * Its URL is empty. And it does not alter names, i.e. its {@link NamespaceDef.name} method returns the name as is.
  */
 export const DEFAULT__NS: NamespaceDef = (/*#__PURE__*/ new DefaultNs());
