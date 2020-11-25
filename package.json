@@ -1,6 +1,6 @@
 {
   "name": "@proc7ts/namespace-aliaser",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Unique namespace aliases for XML, HTML, and CSS names",
   "keywords": [
     "namespace",
