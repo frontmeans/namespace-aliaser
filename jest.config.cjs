@@ -23,7 +23,7 @@ module.exports = {
     [
       'jest-junit',
       {
-        suiteName: '@proc7ts/namespace-aliaser',
+        suiteName: '@frontmeans/namespace-aliaser',
         outputDirectory: './target/test-results',
         classNameTemplate: '{classname}: {title}',
         titleTemplate: '{classname}: {title}',

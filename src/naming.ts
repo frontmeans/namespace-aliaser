@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module @proc7ts/namespace-aliaser
+ * @module @frontmeans/namespace-aliaser
  */
 import type { QualifiedName } from './name';
 import type { NamespaceDef } from './namespace';

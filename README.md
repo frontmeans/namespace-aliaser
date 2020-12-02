@@ -10,16 +10,16 @@ Namespace Aliaser
 Maintains unique aliases for namespaces. Supports XML, HTML, and CSS.
 
 
-[npm-image]: https://img.shields.io/npm/v/@proc7ts/namespace-aliaser.svg?logo=npm
-[npm-url]: https://www.npmjs.com/package/@proc7ts/namespace-aliaser
-[build-status-img]: https://github.com/proc7ts/namespace-aliaser/workflows/Build/badge.svg
-[build-status-link]: https://github.com/proc7ts/namespace-aliaser/actions?query=workflow%3ABuild
-[codecov-image]: https://codecov.io/gh/proc7ts/namespace-aliaser/branch/master/graph/badge.svg
-[codecov-url]: https://codecov.io/gh/proc7ts/namespace-aliaser
+[npm-image]: https://img.shields.io/npm/v/@frontmeans/namespace-aliaser.svg?logo=npm
+[npm-url]: https://www.npmjs.com/package/@frontmeans/namespace-aliaser
+[build-status-img]: https://github.com/frontmeans/namespace-aliaser/workflows/Build/badge.svg
+[build-status-link]: https://github.com/frontmeans/namespace-aliaser/actions?query=workflow%3ABuild
+[codecov-image]: https://codecov.io/gh/frontmeans/namespace-aliaser/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/frontmeans/namespace-aliaser
 [github-image]: https://img.shields.io/static/v1?logo=github&label=GitHub&message=project&color=informational
-[github-url]: https://github.com/proc7ts/namespace-aliaser
+[github-url]: https://github.com/frontmeans/namespace-aliaser
 [api-docs-image]: https://img.shields.io/static/v1?logo=typescript&label=API&message=docs&color=informational
-[api-docs-url]: https://proc7ts.github.io/namespace-aliaser/
+[api-docs-url]: https://frontmeans.github.io/namespace-aliaser/
 
 
 Usage
@@ -37,7 +37,7 @@ The library ensures that names from different namespaces converted to different 
 unique namespace aliases to them. 
 
 ```typescript
-import { newNamespaceAliaser, NamespaceDef } from '@proc7ts/namespace-aliaser';
+import { newNamespaceAliaser, NamespaceDef } from '@frontmeans/namespace-aliaser';
 
 // Create namespace definition
 const ns1 = new NamespaceDef(
@@ -148,7 +148,7 @@ The `Naming` class has a utility method that allows to convert arbitrary qualifi
 
 So, the example above could be simplified to this:
 ```typescript
-import { default__naming, newNamespaceAliaser, NamespaceDef } from '@proc7ts/namespace-aliaser';
+import { default__naming, newNamespaceAliaser, NamespaceDef } from '@frontmeans/namespace-aliaser';
 
 // Create namespace definition
 const ns1 = new NamespaceDef(

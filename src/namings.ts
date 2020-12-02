@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module @proc7ts/namespace-aliaser
+ * @module @frontmeans/namespace-aliaser
  */
 import { Naming } from './naming';
 
