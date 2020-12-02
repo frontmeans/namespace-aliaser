@@ -1,6 +1,6 @@
 {
   "name": "@frontmeans/namespace-aliaser",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "description": "Unique namespace aliases for XML, HTML, and CSS names",
   "keywords": [
     "namespace",
