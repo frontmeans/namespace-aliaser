@@ -24,7 +24,7 @@ export type NameAndNamespace = readonly [string, NamespaceDef];
 /**
  * Checks whether the given `value` is a name+namespace tuple.
  *
- * @param value  A value to check.
+ * @param value - A value to check.
  *
  * @returns `true` if the given `value` is an array consisting of exactly two elements, where the first element is a
  * non-empty string, and the second element is an instance of {@link NamespaceDef}. Or `false` otherwise.
@@ -39,7 +39,7 @@ export function isNameAndNamespace(value: unknown): value is NameAndNamespace {
 /**
  * Checks whether the given `value` is a qualified name.
  *
- * @param value  A value to check.
+ * @param value - A value to check.
  *
  * @returns `true` if the given `value` is a non-empty string or an array consisting of exactly two elements,
  * where the first element is a non-empty string, and the second element is an instance of {@link NamespaceDef}.
@@ -52,7 +52,7 @@ export function isQualifiedName(value: unknown): value is QualifiedName {
 /**
  * Detects a namespace of the given qualified `name`
  *
- * @param name  Qualified name to detect a namespace of.
+ * @param name - Qualified name to detect a namespace of.
  *
  * @returns A namespace if the given `name` has it, or {@link DEFAULT__NS default namespace} otherwise.
  */
@@ -63,7 +63,7 @@ export function namespaceOf(name: QualifiedName): NamespaceDef {
 /**
  * Converts the given qualified `name` to local name and namespace tuple.
  *
- * @param name  Qualified name to convert.
+ * @param name - Qualified name to convert.
  *
  * @returns The `name` itself if it has a namespace, or a tuple consisting of `name` and
  * {@link DEFAULT__NS default namespace} otherwise.
@@ -75,8 +75,8 @@ export function nameAndNamespace(name: QualifiedName): NameAndNamespace {
 /**
  * Checks whether two qualified names are equal to each other.
  *
- * @param first  First qualified name to compare.
- * @param second  Second qualified name to compare.
+ * @param first - First qualified name to compare.
+ * @param second - Second qualified name to compare.
  *
  * @returns `true` if both names are equal, or `false` otherwise.
  */
@@ -99,8 +99,8 @@ export function namesEqual(first: QualifiedName, second: QualifiedName): boolean
  *
  * Names in default namespace considered less than other names. Namespaces are compared by their URLs.
  *
- * @param first  First qualified name to compare.
- * @param second  Second qualified name to compare.
+ * @param first - First qualified name to compare.
+ * @param second - Second qualified name to compare.
  *
  * @returns `-1` if the `first` name is less than the `second` one, `0` if they are equal, or `1` if the `first` name
  * is greater than the `second` one.

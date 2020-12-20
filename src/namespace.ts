@@ -34,8 +34,8 @@ export class NamespaceDef {
   /**
    * Constructs new namespace definition.
    *
-   * @param url  Unique namespace URL.
-   * @param aliases  Preferred namespace aliases. It is expected that each alias is an ASCII letter followed by
+   * @param url - Unique namespace URL.
+   * @param aliases - Preferred namespace aliases. It is expected that each alias is an ASCII letter followed by
    * any number of ASCII letters, digits, `-`, or `_` signs. Aliases starting with `xml` are reserved. Empty alias
    * is reserved for {@link DEFAULT__NS default namespace}.
    */
@@ -49,9 +49,9 @@ export class NamespaceDef {
    *
    * Calls {@link Naming.applyAlias} by default.
    *
-   * @param alias  Namespace alias to apply to the name.
-   * @param name  A name to convert.
-   * @param naming  Naming schema to use. {@link default__naming default naming schema} is used when omitted.
+   * @param alias - Namespace alias to apply to the name.
+   * @param name - A name to convert.
+   * @param naming - Naming schema to use. {@link default__naming default naming schema} is used when omitted.
    *
    * @returns A simple name with this namespace alias applied.
    */

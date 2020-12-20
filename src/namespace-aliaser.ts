@@ -11,7 +11,7 @@ import type { NamespaceDef } from './namespace';
  */
 export type NamespaceAliaser =
 /**
- * @param ns  A definition of namespace to find alias for.
+ * @param ns - A definition of namespace to find alias for.
  *
  * @returns Namespace alias.
  */
