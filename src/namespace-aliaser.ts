@@ -2,7 +2,7 @@
  * @packageDocumentation
  * @module @frontmeans/namespace-aliaser
  */
-import type { NamespaceDef } from './namespace';
+import type { NamespaceDef } from './namespace-def';
 
 /**
  * Namespace aliaser function interface.

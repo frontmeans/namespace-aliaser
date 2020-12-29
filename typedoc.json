@@ -1,13 +1,6 @@
 {
-  "disableAutoModuleName": true,
-  "exclude": [
-    "**/index.ts",
-    "**/*.spec.ts"
-  ],
-  "excludeNotExported": true,
-  "mode": "file",
+  "entryPoints": ["src/index.ts"],
   "name": "Namespace Aliaser",
   "out": "./target/typedoc",
-  "theme": "minimal",
   "tsconfig": "tsconfig.main.json"
 }

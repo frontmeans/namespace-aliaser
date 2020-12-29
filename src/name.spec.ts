@@ -8,7 +8,7 @@ import {
   namespaceOf,
   QualifiedName,
 } from './name';
-import { NamespaceDef } from './namespace';
+import { NamespaceDef } from './namespace-def';
 
 describe('isNameAndNamespace', () => {
   it('returns `true` for name with namespace', () => {

@@ -1,4 +1,4 @@
-import { NamespaceDef } from './namespace';
+import { NamespaceDef } from './namespace-def';
 import type { Naming } from './naming';
 import Mocked = jest.Mocked;
 

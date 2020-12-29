@@ -3,7 +3,7 @@
  * @module @frontmeans/namespace-aliaser
  */
 import { DEFAULT__NS } from './default.ns';
-import { NamespaceDef } from './namespace';
+import { NamespaceDef } from './namespace-def';
 
 /**
  * A name qualified with namespace.

@@ -3,8 +3,8 @@
  * @module @frontmeans/namespace-aliaser
  */
 import type { QualifiedName } from './name';
-import type { NamespaceDef } from './namespace';
 import type { NamespaceAliaser } from './namespace-aliaser';
+import type { NamespaceDef } from './namespace-def';
 
 /**
  * Naming schema is responsible for applying namespace aliases to simple names. E.g. by appending alias as prefix or

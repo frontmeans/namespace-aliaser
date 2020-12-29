@@ -1,5 +1,5 @@
-import { NamespaceDef } from './namespace';
 import { NamespaceAliaser, newNamespaceAliaser } from './namespace-aliaser';
+import { NamespaceDef } from './namespace-def';
 import { css__naming, default__naming, html__naming, id__naming, xml__naming } from './namings';
 
 describe('namings', () => {

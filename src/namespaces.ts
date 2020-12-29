@@ -2,7 +2,7 @@
  * @packageDocumentation
  * @module @frontmeans/namespace-aliaser
  */
-import { NamespaceDef } from './namespace';
+import { NamespaceDef } from './namespace-def';
 
 /**
  * [MathML](https://www.w3.org/Math/) namespace definition.
