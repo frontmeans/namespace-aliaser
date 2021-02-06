@@ -1,7 +1,3 @@
-/**
- * @packageDocumentation
- * @module @frontmeans/namespace-aliaser
- */
 import { NamespaceDef } from './namespace-def';
 
 /**

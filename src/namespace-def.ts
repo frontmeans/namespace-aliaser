@@ -1,7 +1,3 @@
-/**
- * @packageDocumentation
- * @module @frontmeans/namespace-aliaser
- */
 import type { Naming } from './naming';
 import { default__naming } from './namings';
 

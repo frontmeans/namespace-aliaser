@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module @frontmeans/namespace-aliaser
+ * @module Module @frontmeans/namespace-aliaser
  */
 export * from './default.ns';
 export * from './name';
