@@ -37,9 +37,8 @@ export function isNameAndNamespace(value: unknown): value is NameAndNamespace {
  *
  * @param value - A value to check.
  *
- * @returns `true` if the given `value` is a non-empty string or an array consisting of exactly two elements,
- * where the first element is a non-empty string, and the second element is an instance of {@link NamespaceDef}.
- * Or `false` otherwise.
+ * @returns `true` if the given `value` is a string, or an array consisting of exactly two elements, where the first
+ * element is a non-empty string, and the second element is an instance of {@link NamespaceDef}. `false` otherwise.
  */
 export function isQualifiedName(value: unknown): value is QualifiedName {
   return typeof value === 'string' || isNameAndNamespace(value);
