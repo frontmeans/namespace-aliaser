@@ -1,11 +1,12 @@
+import { beforeEach, describe, expect, it, jest } from '@jest/globals';
+import type { Mock } from 'jest-mock';
 import { NamespaceDef } from './namespace-def';
 import type { Naming } from './naming';
-import Mocked = jest.Mocked;
 
 describe('NamespaceDef', () => {
 
   let ns: NamespaceDef;
-  let naming: Mocked<Naming>;
+  let naming: { [K in keyof Naming]: Mock<ReturnType<Naming[K]>, Parameters<Naming[K]>> };
 
   beforeEach(() => {
     ns = new NamespaceDef('test/url');
