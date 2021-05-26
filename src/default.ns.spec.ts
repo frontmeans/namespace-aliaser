@@ -1,3 +1,4 @@
+import { describe, expect, it } from '@jest/globals';
 import { DEFAULT__NS } from './default.ns';
 
 describe('DEFAULT__NS', () => {

@@ -1,3 +1,4 @@
+import { beforeEach, describe, expect, it } from '@jest/globals';
 import { DEFAULT__NS } from './default.ns';
 import {
   compareNames,

@@ -1,3 +1,4 @@
+import { describe, expect, it } from '@jest/globals';
 import { MathML__NS, SVG__NS, XHTML__NS, XML__NS, XMLNS__NS, XSLT__NS } from './namespaces';
 
 describe('MathML__NS', () => {
