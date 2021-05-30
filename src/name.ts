@@ -29,7 +29,18 @@ export function isNameAndNamespace(value: unknown): value is NameAndNamespace {
   return Array.isArray(value)
       && value.length === 2
       && typeof value[0] === 'string'
-      && value[1] instanceof NamespaceDef;
+      && isNamespaceDef(value[1]);
+}
+
+function isNamespaceDef(value: unknown): value is NamespaceDef {
+  if (value instanceof NamespaceDef) {
+    return true;
+  }
+  return typeof value === 'object'
+      && typeof (value as Partial<NamespaceDef>).url === 'string'
+      && typeof (value as Partial<NamespaceDef>).alias === 'string'
+      && Array.isArray((value as Partial<NamespaceDef>).aliases)
+      && typeof (value as Partial<NamespaceDef>).name === 'function';
 }
 
 /**
