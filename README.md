@@ -74,7 +74,7 @@ There are several predefined namespaces:
 
   This namespace is assumed for names without namespace specified.
                                     
-  Its URL is empty. And it does not alter names, i.e. its [[NamespaceDef.name]] method returns the name as is.
+  Its URL is empty, and it does not alter names, i.e. its `NamespaceDef.name()` method returns the name as is.
   
 - `MathML__NS` [MathML](https://www.w3.org/Math/) namespace.
 - `SVG__NS` [SVG](https://www.w3.org/Graphics/SVG/) namespace.
