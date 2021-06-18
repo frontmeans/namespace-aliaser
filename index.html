@@ -63,7 +63,8 @@
 				</a>
 				<p><a href="https://www.npmjs.com/package/@frontmeans/namespace-aliaser"><img src="https://img.shields.io/npm/v/@frontmeans/namespace-aliaser.svg?logo=npm" alt="NPM"></a>
 					<a href="https://github.com/frontmeans/namespace-aliaser/actions?query=workflow%3ABuild"><img src="https://github.com/frontmeans/namespace-aliaser/workflows/Build/badge.svg" alt="Build Status"></a>
-					<a href="https://codecov.io/gh/frontmeans/namespace-aliaser"><img src="https://codecov.io/gh/frontmeans/namespace-aliaser/branch/master/graph/badge.svg" alt="codecov"></a>
+					<a href="https://www.codacy.com/gh/frontmeans/namespace-aliaser/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=frontmeans/namespace-aliaser&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/be30afda813c46c2b2597f4e497c1f18" alt="Code Quality"></a>
+					<a href="https://www.codacy.com/gh/frontmeans/namespace-aliaser/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=frontmeans/namespace-aliaser&amp;utm_campaign=Badge_Coverage"><img src="https://app.codacy.com/project/badge/Coverage/be30afda813c46c2b2597f4e497c1f18" alt="Coverage"></a>
 					<a href="https://github.com/frontmeans/namespace-aliaser"><img src="https://img.shields.io/static/v1?logo=github&label=GitHub&message=project&color=informational" alt="GitHub Project"></a>
 				<a href="https://frontmeans.github.io/namespace-aliaser/"><img src="https://img.shields.io/static/v1?logo=typescript&label=API&message=docs&color=informational" alt="API Documentation"></a></p>
 				<p>Maintains unique aliases for namespaces. Supports XML, HTML, and CSS.</p>
@@ -82,13 +83,13 @@
 				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">newNamespaceAliaser</span><span style="color: #000000">, </span><span style="color: #001080">NamespaceDef</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@frontmeans/namespace-aliaser&#039;</span><span style="color: #000000">;</span>
 
 <span style="color: #008000">// Create namespace definition</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ns1</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">NamespaceDef</span><span style="color: #000000">(</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ns1</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">NamespaceDef</span><span style="color: #000000">(</span>
 <span style="color: #000000">  </span><span style="color: #A31515">&#039;http://my-site.com/ns1&#039;</span><span style="color: #000000">,  </span><span style="color: #008000">// Unique namespace URL. Namespaces are identified by their URLs.</span>
 <span style="color: #000000">  </span><span style="color: #A31515">&#039;my-ns&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;my-namespace&#039;</span><span style="color: #000000">,   </span><span style="color: #008000">// Preferred namespace aliases to use.</span>
 <span style="color: #000000">);</span>
 
 <span style="color: #008000">// Create another namespace definition</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ns2</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">NamespaceDef</span><span style="color: #000000">(</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ns2</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">NamespaceDef</span><span style="color: #000000">(</span>
 <span style="color: #000000">  </span><span style="color: #A31515">&#039;http://my-site.com/ns2&#039;</span><span style="color: #000000">,  </span><span style="color: #008000">// Different URL</span>
 <span style="color: #000000">  </span><span style="color: #A31515">&#039;my-ns&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;my-namespace-2&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// Aliases could be the same for different namespaces</span>
 <span style="color: #000000">                             </span><span style="color: #008000">// The library would select the one unique to each of the them,</span>
@@ -116,7 +117,7 @@
 				<ul>
 					<li><p><code>DEFAULT__NS</code> Default namespace.</p>
 						<p>This namespace is assumed for names without namespace specified.</p>
-						<p>Its URL is empty. And it does not alter names, i.e. its <a href="classes/namespacedef.html#name">NamespaceDef.name</a> method returns the name as is.</p>
+						<p>Its URL is empty, and it does not alter names, i.e. its <code>NamespaceDef.name()</code> method returns the name as is.</p>
 					</li>
 					<li><p><code>MathML__NS</code> <a href="https://www.w3.org/Math/">MathML</a> namespace.</p>
 					</li>
@@ -176,13 +177,13 @@
 				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">default__naming</span><span style="color: #000000">, </span><span style="color: #001080">newNamespaceAliaser</span><span style="color: #000000">, </span><span style="color: #001080">NamespaceDef</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@frontmeans/namespace-aliaser&#039;</span><span style="color: #000000">;</span>
 
 <span style="color: #008000">// Create namespace definition</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ns1</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">NamespaceDef</span><span style="color: #000000">(</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ns1</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">NamespaceDef</span><span style="color: #000000">(</span>
 <span style="color: #000000">  </span><span style="color: #A31515">&#039;http://my-site.com/ns1&#039;</span><span style="color: #000000">,  </span><span style="color: #008000">// Unique namespace URL. Namespaces are identified by their URLs.</span>
 <span style="color: #000000">  </span><span style="color: #A31515">&#039;my-ns&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;my-namespace&#039;</span><span style="color: #000000">,   </span><span style="color: #008000">// Preferred namespace aliases to use.</span>
 <span style="color: #000000">);</span>
 
 <span style="color: #008000">// Create another namespace definition</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ns2</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">NamespaceDef</span><span style="color: #000000">(</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ns2</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">NamespaceDef</span><span style="color: #000000">(</span>
 <span style="color: #000000">  </span><span style="color: #A31515">&#039;http://my-site.com/ns2&#039;</span><span style="color: #000000">,  </span><span style="color: #008000">// Different URL</span>
 <span style="color: #000000">  </span><span style="color: #A31515">&#039;my-ns&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;my-namespace-2&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// Aliases could be the same for different namespaces</span>
 <span style="color: #000000">                             </span><span style="color: #008000">// The library would select the one unique to each of the them,</span>
