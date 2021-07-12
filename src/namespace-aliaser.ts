@@ -1,4 +1,4 @@
-import { cxDefaultScoped, CxEntry, CxGlobals, cxRecent } from '@proc7ts/context-values';
+import { CxEntry, CxGlobals, cxRecent, cxScoped } from '@proc7ts/context-values';
 import type { NamespaceDef } from './namespace-def';
 
 /**
@@ -13,12 +13,12 @@ import type { NamespaceDef } from './namespace-def';
 export type NamespaceAliaser = (this: void, ns: NamespaceDef) => string;
 
 /**
- * Context entry containing global namespace aliaser instance.
+ * Global context entry containing namespace aliaser instance.
  *
- * Tracks the most recently provided namespace aliaser. Creates new global namespace aliaser instance by default.
+ * Tracks the most recently provided namespace aliaser. Creates new namespace aliaser instance by default.
  */
 export const NamespaceAliaser: CxEntry<NamespaceAliaser> = {
-  perContext: (/*#__PURE__*/ cxDefaultScoped(
+  perContext: (/*#__PURE__*/ cxScoped(
       CxGlobals,
       (/*#__PURE__*/ cxRecent<NamespaceAliaser>({
         create: (recent, _) => recent,
