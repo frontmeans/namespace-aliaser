@@ -1,8 +1,5 @@
 import { Naming } from './naming';
 
-/**
- * @internal
- */
 class DefaultNaming extends Naming {
 
   applyAlias(name: string, alias: string): string {
@@ -29,9 +26,6 @@ export const default__naming: Naming = (/*#__PURE__*/ new DefaultNaming());
  */
 export const html__naming: Naming = (/*#__PURE__*/ new DefaultNaming());
 
-/**
- * @internal
- */
 class XmlNaming extends Naming {
 
   applyAlias(name: string, alias: string): string {
@@ -58,9 +52,6 @@ export const xml__naming: Naming = (/*#__PURE__*/ new XmlNaming());
  */
 export const id__naming: Naming = (/*#__PURE__*/ new XmlNaming());
 
-/**
- * @internal
- */
 class CssNaming extends Naming {
 
   applyAlias(name: string, alias: string): string {
