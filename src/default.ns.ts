@@ -1,15 +1,12 @@
 import { NamespaceDef } from './namespace-def';
 
-/**
- * @internal
- */
 class DefaultNs extends NamespaceDef {
 
   constructor() {
     super('');
   }
 
-  name(_alias: string, name: string): string {
+  override name(_alias: string, name: string): string {
     return name;
   }
 
