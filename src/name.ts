@@ -36,6 +36,7 @@ function isNamespaceDef(value: unknown): value is NamespaceDef {
   if (value instanceof NamespaceDef) {
     return true;
   }
+
   return typeof value === 'object'
       && typeof (value as Partial<NamespaceDef>).url === 'string'
       && typeof (value as Partial<NamespaceDef>).alias === 'string'
@@ -119,6 +120,7 @@ export function compareNames(first: QualifiedName, second: QualifiedName): -1 | 
     if (!second[1].url) {
       return compareStrings(first, second[0]);
     }
+
     return -1;
   }
 
@@ -128,6 +130,7 @@ export function compareNames(first: QualifiedName, second: QualifiedName): -1 | 
     if (!firstUrl) {
       return compareStrings(firstName, second);
     }
+
     return 1;
   }
 

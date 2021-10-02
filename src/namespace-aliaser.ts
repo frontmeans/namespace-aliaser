@@ -65,6 +65,7 @@ export function newNamespaceAliaser(): NamespaceAliaser {
       if (!ids) {
         aliasesByNs.set(ns.url, preferred);
         nsNumPerAlias.set(preferred, 1);
+
         return preferred;
       }
       if (!nsNumRegistered) {
