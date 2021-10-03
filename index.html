@@ -1,318 +1,100 @@
-<!doctype html>
-<html class="default no-js">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Namespace Aliaser</title>
-	<meta name="description" content="Documentation for Namespace Aliaser">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
-	<script async src="assets/js/search.js" id="search-script"></script>
-</head>
-<body>
-<header>
-	<div class="tsd-page-toolbar">
-		<div class="container">
-			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
-					<div class="field">
-						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-						<input id="tsd-search-field" type="text" />
-					</div>
-					<ul class="results">
-						<li class="state loading">Preparing search index...</li>
-						<li class="state failure">The search index is not available</li>
-					</ul>
-					<a href="index.html" class="title">Namespace Aliaser</a>
-				</div>
-				<div class="table-cell" id="tsd-widgets">
-					<div id="tsd-filter">
-						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
-						<div class="tsd-filter-group">
-							<div class="tsd-select" id="tsd-filter-visibility">
-								<span class="tsd-select-label">All</span>
-								<ul class="tsd-select-list">
-									<li data-value="public">Public</li>
-									<li data-value="protected">Public/Protected</li>
-									<li data-value="private" class="selected">All</li>
-								</ul>
-							</div>
-							<input type="checkbox" id="tsd-filter-inherited" checked />
-							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-						</div>
-					</div>
-					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="tsd-page-title">
-		<div class="container">
-			<h1>Namespace Aliaser</h1>
-		</div>
-	</div>
-</header>
-<div class="container container-main">
-	<div class="row">
-		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<a href="#namespace-aliaser" id="namespace-aliaser" style="color: inherit; text-decoration: none;">
-					<h1>Namespace Aliaser</h1>
-				</a>
-				<p><a href="https://www.npmjs.com/package/@frontmeans/namespace-aliaser"><img src="https://img.shields.io/npm/v/@frontmeans/namespace-aliaser.svg?logo=npm" alt="NPM"></a>
-					<a href="https://github.com/frontmeans/namespace-aliaser/actions?query=workflow%3ABuild"><img src="https://github.com/frontmeans/namespace-aliaser/workflows/Build/badge.svg" alt="Build Status"></a>
-					<a href="https://www.codacy.com/gh/frontmeans/namespace-aliaser/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=frontmeans/namespace-aliaser&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/be30afda813c46c2b2597f4e497c1f18" alt="Code Quality"></a>
-					<a href="https://www.codacy.com/gh/frontmeans/namespace-aliaser/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=frontmeans/namespace-aliaser&amp;utm_campaign=Badge_Coverage"><img src="https://app.codacy.com/project/badge/Coverage/be30afda813c46c2b2597f4e497c1f18" alt="Coverage"></a>
-					<a href="https://github.com/frontmeans/namespace-aliaser"><img src="https://img.shields.io/static/v1?logo=github&label=GitHub&message=project&color=informational" alt="GitHub Project"></a>
-				<a href="https://frontmeans.github.io/namespace-aliaser/"><img src="https://img.shields.io/static/v1?logo=typescript&label=API&message=docs&color=informational" alt="API Documentation"></a></p>
-				<p>Maintains unique aliases for namespaces. Supports XML, HTML, and CSS.</p>
-				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
-					<h2>Usage</h2>
-				</a>
-				<p>Namespaces can be used to ensure the names are unique.</p>
-				<p>For doing so with the help of this library:</p>
-				<ol>
-					<li>Create namespace definition(s).</li>
-					<li>Create <code>NamespaceAliaser</code> instance.</li>
-					<li>Use that namespace aliaser to convert names from different namespaces to simple string names.</li>
-				</ol>
-				<p>The library ensures that names from different namespaces converted to different string names by applying
-				unique namespace aliases to them. </p>
-				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">newNamespaceAliaser</span><span style="color: #000000">, </span><span style="color: #001080">NamespaceDef</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@frontmeans/namespace-aliaser&#039;</span><span style="color: #000000">;</span>
+<!DOCTYPE html><html class="default no-js"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Namespace Aliaser</title><meta name="description" content="Documentation for Namespace Aliaser"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">Namespace Aliaser</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>Namespace Aliaser</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<a href="#namespace-aliaser" id="namespace-aliaser" style="color: inherit; text-decoration: none;">
+  <h1>Namespace Aliaser</h1>
+</a>
+<p><a href="https://www.npmjs.com/package/@frontmeans/namespace-aliaser"><img src="https://img.shields.io/npm/v/@frontmeans/namespace-aliaser.svg?logo=npm" alt="NPM"></a>
+<a href="https://github.com/frontmeans/namespace-aliaser/actions?query=workflow%3ABuild"><img src="https://github.com/frontmeans/namespace-aliaser/workflows/Build/badge.svg" alt="Build Status"></a>
+<a href="https://www.codacy.com/gh/frontmeans/namespace-aliaser/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=frontmeans/namespace-aliaser&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/be30afda813c46c2b2597f4e497c1f18" alt="Code Quality"></a>
+<a href="https://www.codacy.com/gh/frontmeans/namespace-aliaser/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=frontmeans/namespace-aliaser&amp;utm_campaign=Badge_Coverage"><img src="https://app.codacy.com/project/badge/Coverage/be30afda813c46c2b2597f4e497c1f18" alt="Coverage"></a>
+<a href="https://github.com/frontmeans/namespace-aliaser"><img src="https://img.shields.io/static/v1?logo=github&label=GitHub&message=project&color=informational" alt="GitHub Project"></a>
+<a href="https://frontmeans.github.io/namespace-aliaser/"><img src="https://img.shields.io/static/v1?logo=typescript&label=API&message=docs&color=informational" alt="API Documentation"></a></p>
+<p>Maintains unique aliases for namespaces. Supports XML, HTML, and CSS.</p>
 
-<span style="color: #008000">// Create namespace definition</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ns1</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">NamespaceDef</span><span style="color: #000000">(</span>
-<span style="color: #000000">  </span><span style="color: #A31515">&#039;http://my-site.com/ns1&#039;</span><span style="color: #000000">,  </span><span style="color: #008000">// Unique namespace URL. Namespaces are identified by their URLs.</span>
-<span style="color: #000000">  </span><span style="color: #A31515">&#039;my-ns&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;my-namespace&#039;</span><span style="color: #000000">,   </span><span style="color: #008000">// Preferred namespace aliases to use.</span>
-<span style="color: #000000">);</span>
-
-<span style="color: #008000">// Create another namespace definition</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ns2</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">NamespaceDef</span><span style="color: #000000">(</span>
-<span style="color: #000000">  </span><span style="color: #A31515">&#039;http://my-site.com/ns2&#039;</span><span style="color: #000000">,  </span><span style="color: #008000">// Different URL</span>
-<span style="color: #000000">  </span><span style="color: #A31515">&#039;my-ns&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;my-namespace-2&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// Aliases could be the same for different namespaces</span>
-<span style="color: #000000">                             </span><span style="color: #008000">// The library would select the one unique to each of the them,</span>
-<span style="color: #000000">                             </span><span style="color: #008000">// or generate a new alias. </span>
-<span style="color: #000000">);</span>
-
-<span style="color: #008000">// Create namespace aliaser.</span>
-<span style="color: #008000">// It is important to use the same instance for all operations</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">nsAlias</span><span style="color: #000000"> = </span><span style="color: #795E26">newNamespaceAliaser</span><span style="color: #000000">();</span>
-
-<span style="color: #008000">// Create aliases for each namespace</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">alias1</span><span style="color: #000000"> = </span><span style="color: #795E26">nsAlias</span><span style="color: #000000">(</span><span style="color: #001080">ns1</span><span style="color: #000000">); </span><span style="color: #008000">// `my-ns`</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">alias2</span><span style="color: #000000"> = </span><span style="color: #795E26">nsAlias</span><span style="color: #000000">(</span><span style="color: #001080">ns2</span><span style="color: #000000">); </span><span style="color: #008000">// `my-namespace-2`</span>
-
-<span style="color: #008000">// Convert names in namespaces to simple ones, unique to each namespace</span>
-<span style="color: #008000">// Even though the local names are the same, the resulting names are unique,</span>
-<span style="color: #008000">// as different aliases applied.   </span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">name1</span><span style="color: #000000"> = </span><span style="color: #001080">ns1</span><span style="color: #000000">.</span><span style="color: #795E26">name</span><span style="color: #000000">(</span><span style="color: #001080">alias1</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;name&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// `my-ns-name`</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">name2</span><span style="color: #000000"> = </span><span style="color: #001080">ns2</span><span style="color: #000000">.</span><span style="color: #795E26">name</span><span style="color: #000000">(</span><span style="color: #001080">alias2</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;name&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// `my-namespace-2-name`</span>
+<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+  <h2>Usage</h2>
+</a>
+<p>Namespaces can be used to ensure the names are unique.</p>
+<p>For doing so with the help of this library:</p>
+<ol>
+<li>Create namespace definition(s).</li>
+<li>Create <code>NamespaceAliaser</code> instance.</li>
+<li>Use that namespace aliaser to convert names from different namespaces to simple string names.</li>
+</ol>
+<p>The library ensures that names from different namespaces converted to different string names by applying
+unique namespace aliases to them. </p>
+<pre><code class="language-typescript"><span class="hl-0">import</span><span class="hl-1"> { </span><span class="hl-2">newNamespaceAliaser</span><span class="hl-1">, </span><span class="hl-2">NamespaceDef</span><span class="hl-1"> } </span><span class="hl-0">from</span><span class="hl-1"> </span><span class="hl-3">&#39;@frontmeans/namespace-aliaser&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-4">// Create namespace definition</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">ns1</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-7">NamespaceDef</span><span class="hl-1">(</span><br/><span class="hl-1">  </span><span class="hl-3">&#39;http://my-site.com/ns1&#39;</span><span class="hl-1">,  </span><span class="hl-4">// Unique namespace URL. Namespaces are identified by their URLs.</span><br/><span class="hl-1">  </span><span class="hl-3">&#39;my-ns&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;my-namespace&#39;</span><span class="hl-1">,   </span><span class="hl-4">// Preferred namespace aliases to use.</span><br/><span class="hl-1">);</span><br/><br/><span class="hl-4">// Create another namespace definition</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">ns2</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-7">NamespaceDef</span><span class="hl-1">(</span><br/><span class="hl-1">  </span><span class="hl-3">&#39;http://my-site.com/ns2&#39;</span><span class="hl-1">,  </span><span class="hl-4">// Different URL</span><br/><span class="hl-1">  </span><span class="hl-3">&#39;my-ns&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;my-namespace-2&#39;</span><span class="hl-1">, </span><span class="hl-4">// Aliases could be the same for different namespaces</span><br/><span class="hl-1">                             </span><span class="hl-4">// The library would select the one unique to each of the them,</span><br/><span class="hl-1">                             </span><span class="hl-4">// or generate a new alias. </span><br/><span class="hl-1">);</span><br/><br/><span class="hl-4">// Create namespace aliaser.</span><br/><span class="hl-4">// It is important to use the same instance for all operations</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">nsAlias</span><span class="hl-1"> = </span><span class="hl-7">newNamespaceAliaser</span><span class="hl-1">();</span><br/><br/><span class="hl-4">// Create aliases for each namespace</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">alias1</span><span class="hl-1"> = </span><span class="hl-7">nsAlias</span><span class="hl-1">(</span><span class="hl-2">ns1</span><span class="hl-1">); </span><span class="hl-4">// `my-ns`</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">alias2</span><span class="hl-1"> = </span><span class="hl-7">nsAlias</span><span class="hl-1">(</span><span class="hl-2">ns2</span><span class="hl-1">); </span><span class="hl-4">// `my-namespace-2`</span><br/><br/><span class="hl-4">// Convert names in namespaces to simple ones, unique to each namespace</span><br/><span class="hl-4">// Even though the local names are the same, the resulting names are unique,</span><br/><span class="hl-4">// as different aliases applied.   </span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">name1</span><span class="hl-1"> = </span><span class="hl-2">ns1</span><span class="hl-1">.</span><span class="hl-7">name</span><span class="hl-1">(</span><span class="hl-2">alias1</span><span class="hl-1">, </span><span class="hl-3">&#39;name&#39;</span><span class="hl-1">); </span><span class="hl-4">// `my-ns-name`</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">name2</span><span class="hl-1"> = </span><span class="hl-2">ns2</span><span class="hl-1">.</span><span class="hl-7">name</span><span class="hl-1">(</span><span class="hl-2">alias2</span><span class="hl-1">, </span><span class="hl-3">&#39;name&#39;</span><span class="hl-1">); </span><span class="hl-4">// `my-namespace-2-name`</span>
 </code></pre>
-				<a href="#namespace" id="namespace" style="color: inherit; text-decoration: none;">
-					<h2>Namespace</h2>
-				</a>
-				<p>There are several predefined namespaces:</p>
-				<ul>
-					<li><p><code>DEFAULT__NS</code> Default namespace.</p>
-						<p>This namespace is assumed for names without namespace specified.</p>
-						<p>Its URL is empty, and it does not alter names, i.e. its <code>NamespaceDef.name()</code> method returns the name as is.</p>
-					</li>
-					<li><p><code>MathML__NS</code> <a href="https://www.w3.org/Math/">MathML</a> namespace.</p>
-					</li>
-					<li><p><code>SVG__NS</code> <a href="https://www.w3.org/Graphics/SVG/">SVG</a> namespace.</p>
-					</li>
-					<li><p><code>XHTML__NS</code> <a href="https://www.w3.org/TR/xhtml1/">XHTML</a> namespace.</p>
-					</li>
-					<li><p><code>XML__NS</code> <a href="https://www.w3.org/XML/1998/namespace">XML</a> namespace. Always bound to <code>xml</code> alias.</p>
-					</li>
-					<li><p><code>XMLNS__NS</code> <a href="https://www.w3.org/TR/xml-names/#ns-decl">XML Namespaces</a> namespace. Always bound to <code>xmlns</code> alias.</p>
-					</li>
-					<li><p><code>XSLT__NS</code> <a href="https://www.w3.org/TR/1999/REC-xslt-19991116#xslt-namespace">XSL Transformations</a> namespace.   </p>
-					</li>
-				</ul>
-				<p>More namespaces could be defined by instantiating or extending <code>NamespaceDef</code> class. Note that namespaces are
-				identified by their URLs, rather by their definitions.</p>
-				<a href="#naming-schema" id="naming-schema" style="color: inherit; text-decoration: none;">
-					<h2>Naming Schema</h2>
-				</a>
-				<p>A naming schema is responsible for applying namespace aliases to simple names.</p>
-				<p>Naming schemes extend <code>Naming</code> class.</p>
-				<p>A naming schema can be passed as a third argument to <code>NamespaceDef.name()</code> method. A <code>default__naming</code> is used
-				by default.</p>
-				<p>So, given the previous definitions, the following code would result to different names:</p>
-				<pre><code class="language-typescript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">xmlName1</span><span style="color: #000000"> = </span><span style="color: #001080">ns1</span><span style="color: #000000">.</span><span style="color: #795E26">name</span><span style="color: #000000">(</span><span style="color: #001080">alias1</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;name&#039;</span><span style="color: #000000">, </span><span style="color: #001080">xml__naming</span><span style="color: #000000">); </span><span style="color: #008000">// `my-ns:name`</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">cssName2</span><span style="color: #000000"> = </span><span style="color: #001080">ns2</span><span style="color: #000000">.</span><span style="color: #795E26">name</span><span style="color: #000000">(</span><span style="color: #001080">alias2</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;name&#039;</span><span style="color: #000000">, </span><span style="color: #001080">css__naming</span><span style="color: #000000">); </span><span style="color: #008000">// `name@my-namespace-2`</span>
+
+<a href="#namespace" id="namespace" style="color: inherit; text-decoration: none;">
+  <h2>Namespace</h2>
+</a>
+<p>There are several predefined namespaces:</p>
+<ul>
+<li><p><code>DEFAULT__NS</code> Default namespace.</p>
+<p>This namespace is assumed for names without namespace specified.</p>
+<p>Its URL is empty, and it does not alter names, i.e. its <code>NamespaceDef.name()</code> method returns the name as is.</p>
+</li>
+<li><p><code>MathML__NS</code> <a href="https://www.w3.org/Math/">MathML</a> namespace.</p>
+</li>
+<li><p><code>SVG__NS</code> <a href="https://www.w3.org/Graphics/SVG/">SVG</a> namespace.</p>
+</li>
+<li><p><code>XHTML__NS</code> <a href="https://www.w3.org/TR/xhtml1/">XHTML</a> namespace.</p>
+</li>
+<li><p><code>XML__NS</code> <a href="https://www.w3.org/XML/1998/namespace">XML</a> namespace. Always bound to <code>xml</code> alias.</p>
+</li>
+<li><p><code>XMLNS__NS</code> <a href="https://www.w3.org/TR/xml-names/#ns-decl">XML Namespaces</a> namespace. Always bound to <code>xmlns</code> alias.</p>
+</li>
+<li><p><code>XSLT__NS</code> <a href="https://www.w3.org/TR/1999/REC-xslt-19991116#xslt-namespace">XSL Transformations</a> namespace.</p>
+</li>
+</ul>
+<p>More namespaces could be defined by instantiating or extending <code>NamespaceDef</code> class. Note that namespaces are
+identified by their URLs, rather by their definitions.</p>
+
+<a href="#naming-schema" id="naming-schema" style="color: inherit; text-decoration: none;">
+  <h2>Naming Schema</h2>
+</a>
+<p>A naming schema is responsible for applying namespace aliases to simple names.</p>
+<p>Naming schemes extend <code>Naming</code> class.</p>
+<p>A naming schema can be passed as a third argument to <code>NamespaceDef.name()</code> method. A <code>default__naming</code> is used
+by default.</p>
+<p>So, given the previous definitions, the following code would result to different names:</p>
+<pre><code class="language-typescript"><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">xmlName1</span><span class="hl-1"> = </span><span class="hl-2">ns1</span><span class="hl-1">.</span><span class="hl-7">name</span><span class="hl-1">(</span><span class="hl-2">alias1</span><span class="hl-1">, </span><span class="hl-3">&#39;name&#39;</span><span class="hl-1">, </span><span class="hl-2">xml__naming</span><span class="hl-1">); </span><span class="hl-4">// `my-ns:name`</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">cssName2</span><span class="hl-1"> = </span><span class="hl-2">ns2</span><span class="hl-1">.</span><span class="hl-7">name</span><span class="hl-1">(</span><span class="hl-2">alias2</span><span class="hl-1">, </span><span class="hl-3">&#39;name&#39;</span><span class="hl-1">, </span><span class="hl-2">css__naming</span><span class="hl-1">); </span><span class="hl-4">// `name@my-namespace-2`</span>
 </code></pre>
-				<p>There are several predefined naming schemas:</p>
-				<ul>
-					<li><p><code>default__naming</code> Default naming schema.</p>
-						<p>Prefixes a name with namespace alias separating them by dash.</p>
-						<p>The result looks like <code>&lt;alias&gt;-&lt;name&gt;</code>.</p>
-					</li>
-					<li><p><code>html__naming</code> HTML elements naming schema.</p>
-						<p>Prefixes a name with namespace alias separating them by dash.</p>
-						<p>The result looks like <code>&lt;alias&gt;-&lt;name&gt;</code>.</p>
-					</li>
-					<li><p><code>xml__naming</code> XML elements naming schema.</p>
-						<p>Prefixes a name with namespace alias separating them by colon.</p>
-						<p>The result looks like <code>&lt;alias&gt;:&lt;name&gt;</code>.</p>
-					</li>
-					<li><p><code>id__naming</code> Element identifiers naming schema.</p>
-						<p>Prefixes a name with namespace alias separating them by colon.</p>
-						<p>The result looks like <code>&lt;alias&gt;:&lt;name&gt;</code>.</p>
-					</li>
-					<li><p><code>css__naming</code> CSS classes naming scheme.</p>
-						<p>Appends namespace alias as a name suffix separated by <code>@</code> sign.</p>
-						<p>The result looks like <code>&lt;name&gt;@&lt;alias&gt;</code>.         </p>
-					</li>
-				</ul>
-				<a href="#qualified-name" id="qualified-name" style="color: inherit; text-decoration: none;">
-					<h2>Qualified Name</h2>
-				</a>
-				<p>Qualified name is a tuple consisting of local name string and namespace definition.</p>
-				<p>The <code>Naming</code> class has a utility method that allows to convert arbitrary qualified name to simple one.</p>
-				<p>So, the example above could be simplified to this:</p>
-				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">default__naming</span><span style="color: #000000">, </span><span style="color: #001080">newNamespaceAliaser</span><span style="color: #000000">, </span><span style="color: #001080">NamespaceDef</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@frontmeans/namespace-aliaser&#039;</span><span style="color: #000000">;</span>
+<p>There are several predefined naming schemas:</p>
+<ul>
+<li><p><code>default__naming</code> Default naming schema.</p>
+<p>Prefixes a name with namespace alias separating them by dash.</p>
+<p>The result looks like <code>&lt;alias&gt;-&lt;name&gt;</code>.</p>
+</li>
+<li><p><code>html__naming</code> HTML elements naming schema.</p>
+<p>Prefixes a name with namespace alias separating them by dash.</p>
+<p>The result looks like <code>&lt;alias&gt;-&lt;name&gt;</code>.</p>
+</li>
+<li><p><code>xml__naming</code> XML elements naming schema.</p>
+<p>Prefixes a name with namespace alias separating them by colon.</p>
+<p>The result looks like <code>&lt;alias&gt;:&lt;name&gt;</code>.</p>
+</li>
+<li><p><code>id__naming</code> Element identifiers naming schema.</p>
+<p>Prefixes a name with namespace alias separating them by colon.</p>
+<p>The result looks like <code>&lt;alias&gt;:&lt;name&gt;</code>.</p>
+</li>
+<li><p><code>css__naming</code> CSS classes naming scheme.</p>
+<p>Appends namespace alias as a name suffix separated by <code>@</code> sign.</p>
+<p>The result looks like <code>&lt;name&gt;@&lt;alias&gt;</code>.</p>
+</li>
+</ul>
 
-<span style="color: #008000">// Create namespace definition</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ns1</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">NamespaceDef</span><span style="color: #000000">(</span>
-<span style="color: #000000">  </span><span style="color: #A31515">&#039;http://my-site.com/ns1&#039;</span><span style="color: #000000">,  </span><span style="color: #008000">// Unique namespace URL. Namespaces are identified by their URLs.</span>
-<span style="color: #000000">  </span><span style="color: #A31515">&#039;my-ns&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;my-namespace&#039;</span><span style="color: #000000">,   </span><span style="color: #008000">// Preferred namespace aliases to use.</span>
-<span style="color: #000000">);</span>
-
-<span style="color: #008000">// Create another namespace definition</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ns2</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">NamespaceDef</span><span style="color: #000000">(</span>
-<span style="color: #000000">  </span><span style="color: #A31515">&#039;http://my-site.com/ns2&#039;</span><span style="color: #000000">,  </span><span style="color: #008000">// Different URL</span>
-<span style="color: #000000">  </span><span style="color: #A31515">&#039;my-ns&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;my-namespace-2&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// Aliases could be the same for different namespaces</span>
-<span style="color: #000000">                             </span><span style="color: #008000">// The library would select the one unique to each of the them,</span>
-<span style="color: #000000">                             </span><span style="color: #008000">// or generate a new alias. </span>
-<span style="color: #000000">);</span>
-
-<span style="color: #008000">// Create namespace aliaser.</span>
-<span style="color: #008000">// It is important to use the same instance for all operations</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">nsAlias</span><span style="color: #000000"> = </span><span style="color: #795E26">newNamespaceAliaser</span><span style="color: #000000">();</span>
-
-<span style="color: #008000">// Convert qualified names to simple ones.   </span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">name1</span><span style="color: #000000"> = </span><span style="color: #001080">default__naming</span><span style="color: #000000">.</span><span style="color: #795E26">name</span><span style="color: #000000">([</span><span style="color: #A31515">&#039;name&#039;</span><span style="color: #000000">, </span><span style="color: #001080">ns1</span><span style="color: #000000">], </span><span style="color: #001080">nsAlias</span><span style="color: #000000">); </span><span style="color: #008000">// `my-ns-name`</span>
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">name2</span><span style="color: #000000"> = </span><span style="color: #001080">default__naming</span><span style="color: #000000">.</span><span style="color: #795E26">name</span><span style="color: #000000">([</span><span style="color: #A31515">&#039;name&#039;</span><span style="color: #000000">, </span><span style="color: #001080">ns2</span><span style="color: #000000">], </span><span style="color: #001080">nsAlias</span><span style="color: #000000">); </span><span style="color: #008000">// `my-namespace-2-name`</span>
+<a href="#qualified-name" id="qualified-name" style="color: inherit; text-decoration: none;">
+  <h2>Qualified Name</h2>
+</a>
+<p>Qualified name is a tuple consisting of local name string and namespace definition.</p>
+<p>The <code>Naming</code> class has a utility method that allows to convert arbitrary qualified name to simple one.</p>
+<p>So, the example above could be simplified to this:</p>
+<pre><code class="language-typescript"><span class="hl-0">import</span><span class="hl-1"> { </span><span class="hl-2">default__naming</span><span class="hl-1">, </span><span class="hl-2">newNamespaceAliaser</span><span class="hl-1">, </span><span class="hl-2">NamespaceDef</span><span class="hl-1"> } </span><span class="hl-0">from</span><span class="hl-1"> </span><span class="hl-3">&#39;@frontmeans/namespace-aliaser&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-4">// Create namespace definition</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">ns1</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-7">NamespaceDef</span><span class="hl-1">(</span><br/><span class="hl-1">  </span><span class="hl-3">&#39;http://my-site.com/ns1&#39;</span><span class="hl-1">,  </span><span class="hl-4">// Unique namespace URL. Namespaces are identified by their URLs.</span><br/><span class="hl-1">  </span><span class="hl-3">&#39;my-ns&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;my-namespace&#39;</span><span class="hl-1">,   </span><span class="hl-4">// Preferred namespace aliases to use.</span><br/><span class="hl-1">);</span><br/><br/><span class="hl-4">// Create another namespace definition</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">ns2</span><span class="hl-1"> = </span><span class="hl-5">new</span><span class="hl-1"> </span><span class="hl-7">NamespaceDef</span><span class="hl-1">(</span><br/><span class="hl-1">  </span><span class="hl-3">&#39;http://my-site.com/ns2&#39;</span><span class="hl-1">,  </span><span class="hl-4">// Different URL</span><br/><span class="hl-1">  </span><span class="hl-3">&#39;my-ns&#39;</span><span class="hl-1">, </span><span class="hl-3">&#39;my-namespace-2&#39;</span><span class="hl-1">, </span><span class="hl-4">// Aliases could be the same for different namespaces</span><br/><span class="hl-1">                             </span><span class="hl-4">// The library would select the one unique to each of the them,</span><br/><span class="hl-1">                             </span><span class="hl-4">// or generate a new alias. </span><br/><span class="hl-1">);</span><br/><br/><span class="hl-4">// Create namespace aliaser.</span><br/><span class="hl-4">// It is important to use the same instance for all operations</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">nsAlias</span><span class="hl-1"> = </span><span class="hl-7">newNamespaceAliaser</span><span class="hl-1">();</span><br/><br/><span class="hl-4">// Convert qualified names to simple ones.   </span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">name1</span><span class="hl-1"> = </span><span class="hl-2">default__naming</span><span class="hl-1">.</span><span class="hl-7">name</span><span class="hl-1">([</span><span class="hl-3">&#39;name&#39;</span><span class="hl-1">, </span><span class="hl-2">ns1</span><span class="hl-1">], </span><span class="hl-2">nsAlias</span><span class="hl-1">); </span><span class="hl-4">// `my-ns-name`</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">name2</span><span class="hl-1"> = </span><span class="hl-2">default__naming</span><span class="hl-1">.</span><span class="hl-7">name</span><span class="hl-1">([</span><span class="hl-3">&#39;name&#39;</span><span class="hl-1">, </span><span class="hl-2">ns2</span><span class="hl-1">], </span><span class="hl-2">nsAlias</span><span class="hl-1">); </span><span class="hl-4">// `my-namespace-2-name`</span>
 </code></pre>
-				<p>A simple string is considered a qualified name in default namespace (<code>DEFAULT__NS</code>) and can be passed to <code>Naming.name()</code>
-					method too. The original name would not be altered though. So all of the following expressions would return the same
-				result:</p>
-				<pre><code class="language-typescript"><span style="color: #001080">default__naming</span><span style="color: #000000">.</span><span style="color: #795E26">name</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;name&#039;</span><span style="color: #000000">, </span><span style="color: #001080">nsAlias</span><span style="color: #000000">);                </span><span style="color: #008000">// `name`</span>
-<span style="color: #001080">css__naming</span><span style="color: #000000">.</span><span style="color: #795E26">name</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;name&#039;</span><span style="color: #000000">, </span><span style="color: #001080">nsAlias</span><span style="color: #000000">);                    </span><span style="color: #008000">// `name`</span>
-<span style="color: #001080">default__naming</span><span style="color: #000000">.</span><span style="color: #795E26">name</span><span style="color: #000000">([</span><span style="color: #A31515">&#039;name&#039;</span><span style="color: #000000">, </span><span style="color: #0070C1">DEFAULT__NS</span><span style="color: #000000">], </span><span style="color: #001080">nsAlias</span><span style="color: #000000">); </span><span style="color: #008000">// `name`</span>
+<p>A simple string is considered a qualified name in default namespace (<code>DEFAULT__NS</code>) and can be passed to <code>Naming.name()</code>
+method too. The original name would not be altered though. So all of the following expressions would return the same
+result:</p>
+<pre><code class="language-typescript"><span class="hl-2">default__naming</span><span class="hl-1">.</span><span class="hl-7">name</span><span class="hl-1">(</span><span class="hl-3">&#39;name&#39;</span><span class="hl-1">, </span><span class="hl-2">nsAlias</span><span class="hl-1">);                </span><span class="hl-4">// `name`</span><br/><span class="hl-2">css__naming</span><span class="hl-1">.</span><span class="hl-7">name</span><span class="hl-1">(</span><span class="hl-3">&#39;name&#39;</span><span class="hl-1">, </span><span class="hl-2">nsAlias</span><span class="hl-1">);                    </span><span class="hl-4">// `name`</span><br/><span class="hl-2">default__naming</span><span class="hl-1">.</span><span class="hl-7">name</span><span class="hl-1">([</span><span class="hl-3">&#39;name&#39;</span><span class="hl-1">, </span><span class="hl-6">DEFAULT__NS</span><span class="hl-1">], </span><span class="hl-2">nsAlias</span><span class="hl-1">); </span><span class="hl-4">// `name`</span>
 </code></pre>
-			</div>
-		</div>
-		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-			<nav class="tsd-navigation primary">
-				<ul>
-					<li class=" ">
-						<a href="modules.html">Exports</a>
-					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation secondary menu-sticky">
-				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="classes/NamespaceDef.html" class="tsd-kind-icon">Namespace<wbr>Def</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/Naming.html" class="tsd-kind-icon">Naming</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#NameAndNamespace" class="tsd-kind-icon">Name<wbr>And<wbr>Namespace</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#NamespaceAliaser" class="tsd-kind-icon">Namespace<wbr>Aliaser</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="modules.html#QualifiedName" class="tsd-kind-icon">Qualified<wbr>Name</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="modules.html#DEFAULT__NS" class="tsd-kind-icon">DEFAULT__NS</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="modules.html#MathML__NS" class="tsd-kind-icon">MathML__NS</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="modules.html#NamespaceAliaser" class="tsd-kind-icon">Namespace<wbr>Aliaser</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="modules.html#SVG__NS" class="tsd-kind-icon">SVG__NS</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="modules.html#XHTML__NS" class="tsd-kind-icon">XHTML__NS</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="modules.html#XMLNS__NS" class="tsd-kind-icon">XMLNS__NS</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="modules.html#XML__NS" class="tsd-kind-icon">XML__NS</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="modules.html#XSLT__NS" class="tsd-kind-icon">XSLT__NS</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="modules.html#css__naming" class="tsd-kind-icon">css__naming</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="modules.html#default__naming" class="tsd-kind-icon">default__naming</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="modules.html#html__naming" class="tsd-kind-icon">html__naming</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="modules.html#id__naming" class="tsd-kind-icon">id__naming</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="modules.html#xml__naming" class="tsd-kind-icon">xml__naming</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#compareNames" class="tsd-kind-icon">compare<wbr>Names</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#isNameAndNamespace" class="tsd-kind-icon">is<wbr>Name<wbr>And<wbr>Namespace</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#isQualifiedName" class="tsd-kind-icon">is<wbr>Qualified<wbr>Name</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#nameAndNamespace" class="tsd-kind-icon">name<wbr>And<wbr>Namespace</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#namesEqual" class="tsd-kind-icon">names<wbr>Equal</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#namespaceOf" class="tsd-kind-icon">namespace<wbr>Of</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#newNamespaceAliaser" class="tsd-kind-icon">new<wbr>Namespace<wbr>Aliaser</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-</div>
-<footer class="with-border-bottom">
-	<div class="container">
-		<h2>Legend</h2>
-		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-		</div>
-	</div>
-</footer>
-<div class="container tsd-generator">
-	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
-</div>
-<div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-class"><a href="classes/NamespaceDef.html" class="tsd-kind-icon">Namespace<wbr/>Def</a></li><li class="tsd-kind-class"><a href="classes/Naming.html" class="tsd-kind-icon">Naming</a></li><li class="tsd-kind-type-alias"><a href="modules.html#NameAndNamespace" class="tsd-kind-icon">Name<wbr/>And<wbr/>Namespace</a></li><li class="tsd-kind-type-alias"><a href="modules.html#NamespaceAliaser" class="tsd-kind-icon">Namespace<wbr/>Aliaser</a></li><li class="tsd-kind-type-alias"><a href="modules.html#QualifiedName" class="tsd-kind-icon">Qualified<wbr/>Name</a></li><li class="tsd-kind-variable"><a href="modules.html#DEFAULT__NS" class="tsd-kind-icon">DEFAULT__NS</a></li><li class="tsd-kind-variable"><a href="modules.html#MathML__NS" class="tsd-kind-icon">MathML__NS</a></li><li class="tsd-kind-variable"><a href="modules.html#NamespaceAliaser" class="tsd-kind-icon">Namespace<wbr/>Aliaser</a></li><li class="tsd-kind-variable"><a href="modules.html#SVG__NS" class="tsd-kind-icon">SVG__NS</a></li><li class="tsd-kind-variable"><a href="modules.html#XHTML__NS" class="tsd-kind-icon">XHTML__NS</a></li><li class="tsd-kind-variable"><a href="modules.html#XMLNS__NS" class="tsd-kind-icon">XMLNS__NS</a></li><li class="tsd-kind-variable"><a href="modules.html#XML__NS" class="tsd-kind-icon">XML__NS</a></li><li class="tsd-kind-variable"><a href="modules.html#XSLT__NS" class="tsd-kind-icon">XSLT__NS</a></li><li class="tsd-kind-variable"><a href="modules.html#css__naming" class="tsd-kind-icon">css__naming</a></li><li class="tsd-kind-variable"><a href="modules.html#default__naming" class="tsd-kind-icon">default__naming</a></li><li class="tsd-kind-variable"><a href="modules.html#html__naming" class="tsd-kind-icon">html__naming</a></li><li class="tsd-kind-variable"><a href="modules.html#id__naming" class="tsd-kind-icon">id__naming</a></li><li class="tsd-kind-variable"><a href="modules.html#xml__naming" class="tsd-kind-icon">xml__naming</a></li><li class="tsd-kind-function"><a href="modules.html#compareNames" class="tsd-kind-icon">compare<wbr/>Names</a></li><li class="tsd-kind-function"><a href="modules.html#isNameAndNamespace" class="tsd-kind-icon">is<wbr/>Name<wbr/>And<wbr/>Namespace</a></li><li class="tsd-kind-function"><a href="modules.html#isQualifiedName" class="tsd-kind-icon">is<wbr/>Qualified<wbr/>Name</a></li><li class="tsd-kind-function"><a href="modules.html#nameAndNamespace" class="tsd-kind-icon">name<wbr/>And<wbr/>Namespace</a></li><li class="tsd-kind-function"><a href="modules.html#namesEqual" class="tsd-kind-icon">names<wbr/>Equal</a></li><li class="tsd-kind-function"><a href="modules.html#namespaceOf" class="tsd-kind-icon">namespace<wbr/>Of</a></li><li class="tsd-kind-function"><a href="modules.html#newNamespaceAliaser" class="tsd-kind-icon">new<wbr/>Namespace<wbr/>Aliaser</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li><li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li><li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
