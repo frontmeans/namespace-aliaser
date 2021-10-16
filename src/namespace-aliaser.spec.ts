@@ -68,7 +68,7 @@ describe('NamespaceAliaser', () => {
 
       const nsAlias = cxBuilder.get(NamespaceAliaser);
 
-      expect(xml__naming.name(['html', XMLNS__NS], nsAlias)).toEqual('xmlns:html');
+      expect(xml__naming.name(['html', XMLNS__NS], nsAlias)).toBe('xmlns:html');
     });
     it('reflects most recent value', () => {
       cxBuilder.provide(cxConstAsset(CxGlobals, cxBuilder.context));
@@ -80,7 +80,7 @@ describe('NamespaceAliaser', () => {
 
       const nsAlias = cxBuilder.get(NamespaceAliaser);
 
-      expect(nsAlias(XMLNS__NS)).toEqual('xmlns');
+      expect(nsAlias(XMLNS__NS)).toBe('xmlns');
       expect(nsAlias1).toHaveBeenLastCalledWith(XMLNS__NS);
 
       cxBuilder.provide(cxConstAsset(NamespaceAliaser, nsAlias2));
