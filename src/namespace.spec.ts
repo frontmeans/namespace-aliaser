@@ -6,7 +6,7 @@ import type { Naming } from './naming';
 describe('NamespaceDef', () => {
 
   let ns: NamespaceDef;
-  let naming: { [K in keyof Naming]: Mock<ReturnType<Naming[K]>, Parameters<Naming[K]>> };
+  let naming: { [K in keyof Naming]: Mock<Naming[K]> };
 
   beforeEach(() => {
     ns = new NamespaceDef('test/url');
