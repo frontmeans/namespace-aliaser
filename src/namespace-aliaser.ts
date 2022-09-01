@@ -18,19 +18,18 @@ export type NamespaceAliaser = (this: void, ns: NamespaceDef) => string;
  * Tracks the most recently provided namespace aliaser. Creates new namespace aliaser instance by default.
  */
 export const NamespaceAliaser: CxEntry<NamespaceAliaser> = {
-  perContext: (/*#__PURE__*/ cxScoped(
-      CxGlobals,
-      (/*#__PURE__*/ cxRecent<NamespaceAliaser>({
-        create: (recent, _) => recent,
-        byDefault: _ => newNamespaceAliaser(),
-        assign: ({ get, to }, _) => {
+  perContext: /*#__PURE__*/ cxScoped(
+    CxGlobals,
+    /*#__PURE__*/ cxRecent<NamespaceAliaser>({
+      create: (recent, _) => recent,
+      byDefault: _ => newNamespaceAliaser(),
+      assign: ({ get, to }, _) => {
+        const nsAlias: NamespaceAliaser = ns => get()(ns);
 
-          const nsAlias: NamespaceAliaser = ns => get()(ns);
-
-          return receiver => to((_, by) => receiver(nsAlias, by));
-        },
-      })),
-  )),
+        return receiver => to((_, by) => receiver(nsAlias, by));
+      },
+    }),
+  ),
   toString: () => '[NamespaceAliaser]',
 };
 
@@ -43,12 +42,10 @@ export const NamespaceAliaser: CxEntry<NamespaceAliaser> = {
  * @returns New instance of namespace aliaser.
  */
 export function newNamespaceAliaser(): NamespaceAliaser {
-
   const aliasesByNs = new Map<string, string>();
   const nsNumPerAlias = new Map<string, number>();
 
   return function nsAlias(ns: NamespaceDef): string {
-
     const found = aliasesByNs.get(ns.url);
 
     if (found) {
@@ -59,7 +56,6 @@ export function newNamespaceAliaser(): NamespaceAliaser {
     let nsNumRegistered = 0;
 
     for (const preferred of [mostPreferred, ...ns.aliases]) {
-
       const ids = nsNumPerAlias.get(preferred);
 
       if (!ids) {

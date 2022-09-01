@@ -15,7 +15,7 @@ class DefaultNaming extends Naming {
  *
  * The result looks like `<alias>-<name>`.
  */
-export const default__naming: Naming = (/*#__PURE__*/ new DefaultNaming());
+export const default__naming: Naming = /*#__PURE__*/ new DefaultNaming();
 
 /**
  * HTML elements naming schema.
@@ -24,7 +24,7 @@ export const default__naming: Naming = (/*#__PURE__*/ new DefaultNaming());
  *
  * The result looks like `<alias>-<name>`.
  */
-export const html__naming: Naming = (/*#__PURE__*/ new DefaultNaming());
+export const html__naming: Naming = /*#__PURE__*/ new DefaultNaming();
 
 class XmlNaming extends Naming {
 
@@ -41,7 +41,7 @@ class XmlNaming extends Naming {
  *
  * The result looks like `<alias>:<name>`.
  */
-export const xml__naming: Naming = (/*#__PURE__*/ new XmlNaming());
+export const xml__naming: Naming = /*#__PURE__*/ new XmlNaming();
 
 /**
  * Element identifiers naming schema.
@@ -50,7 +50,7 @@ export const xml__naming: Naming = (/*#__PURE__*/ new XmlNaming());
  *
  * The result looks like `<alias>:<name>`.
  */
-export const id__naming: Naming = (/*#__PURE__*/ new XmlNaming());
+export const id__naming: Naming = /*#__PURE__*/ new XmlNaming();
 
 class CssNaming extends Naming {
 
@@ -67,4 +67,4 @@ class CssNaming extends Naming {
  *
  * The result looks like `<name>@<alias>`.
  */
-export const css__naming: Naming = (/*#__PURE__*/ new CssNaming());
+export const css__naming: Naming = /*#__PURE__*/ new CssNaming();

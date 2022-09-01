@@ -16,28 +16,43 @@ describe('isNameAndNamespace', () => {
     expect(isNameAndNamespace(['foo', new NamespaceDef('test/ns')])).toBe(true);
   });
   it('returns `true` if the second element has a `NamespaceDef` structure', () => {
-    expect(isNameAndNamespace([
-      'foo',
-      { url: 'test/ns', alias: 'test', aliases: ['test'], name: NamespaceDef.prototype.name },
-    ])).toBe(true);
+    expect(
+      isNameAndNamespace([
+        'foo',
+        { url: 'test/ns', alias: 'test', aliases: ['test'], name: NamespaceDef.prototype.name },
+      ]),
+    ).toBe(true);
   });
   it('returns `false` if the second element has a non-`NamespaceDef` structure', () => {
-    expect(isNameAndNamespace([
-      'foo',
-      { url: { href: 'test/ns' }, alias: 'test', aliases: ['test'], name: NamespaceDef.prototype.name },
-    ])).toBe(false);
-    expect(isNameAndNamespace([
-      'foo',
-      { url: 'test/ns', alias: 1, aliases: ['test'], name: NamespaceDef.prototype.name },
-    ])).toBe(false);
-    expect(isNameAndNamespace([
-      'foo',
-      { url: 'test/ns', alias: 'test', aliases: {}, name: NamespaceDef.prototype.name },
-    ])).toBe(false);
-    expect(isNameAndNamespace([
-      'foo',
-      { url: 'test/ns', alias: 'test', aliases: ['test'], name: 'test' },
-    ])).toBe(false);
+    expect(
+      isNameAndNamespace([
+        'foo',
+        {
+          url: { href: 'test/ns' },
+          alias: 'test',
+          aliases: ['test'],
+          name: NamespaceDef.prototype.name,
+        },
+      ]),
+    ).toBe(false);
+    expect(
+      isNameAndNamespace([
+        'foo',
+        { url: 'test/ns', alias: 1, aliases: ['test'], name: NamespaceDef.prototype.name },
+      ]),
+    ).toBe(false);
+    expect(
+      isNameAndNamespace([
+        'foo',
+        { url: 'test/ns', alias: 'test', aliases: {}, name: NamespaceDef.prototype.name },
+      ]),
+    ).toBe(false);
+    expect(
+      isNameAndNamespace([
+        'foo',
+        { url: 'test/ns', alias: 'test', aliases: ['test'], name: 'test' },
+      ]),
+    ).toBe(false);
   });
   it('returns `false` when array is too long', () => {
     expect(isNameAndNamespace(['foo', new NamespaceDef('test/ns'), 'bar'])).toBe(false);
@@ -67,7 +82,6 @@ describe('isQualifiedName', () => {
 
 describe('namespaceOf', () => {
   it('returns namespace for name with namespace', () => {
-
     const ns = new NamespaceDef('test/url');
 
     expect(namespaceOf(['name', ns])).toBe(ns);
@@ -79,13 +93,11 @@ describe('namespaceOf', () => {
 
 describe('nameAndNamespace', () => {
   it('returns the name itself for the name with namespace', () => {
-
     const name: QualifiedName = ['some-name', new NamespaceDef('test/url')];
 
     expect(nameAndNamespace(name)).toBe(name);
   });
   it('returns default namespace for string name', () => {
-
     const name = 'some-name';
 
     expect(nameAndNamespace(name)).toEqual([name, DEFAULT__NS]);
@@ -93,7 +105,6 @@ describe('nameAndNamespace', () => {
 });
 
 describe('namesEqual', () => {
-
   let ns1: NamespaceDef;
   let ns2: NamespaceDef;
 
@@ -123,7 +134,6 @@ describe('namesEqual', () => {
 });
 
 describe('compareNames', () => {
-
   let ns1: NamespaceDef;
   let ns2: NamespaceDef;
 

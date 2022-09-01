@@ -26,10 +26,12 @@ export type NameAndNamespace = readonly [string, NamespaceDef];
  * non-empty string, and the second element is an instance of {@link NamespaceDef}. Or `false` otherwise.
  */
 export function isNameAndNamespace(value: unknown): value is NameAndNamespace {
-  return Array.isArray(value)
-      && value.length === 2
-      && typeof value[0] === 'string'
-      && isNamespaceDef(value[1]);
+  return (
+    Array.isArray(value)
+    && value.length === 2
+    && typeof value[0] === 'string'
+    && isNamespaceDef(value[1])
+  );
 }
 
 function isNamespaceDef(value: unknown): value is NamespaceDef {
@@ -37,11 +39,13 @@ function isNamespaceDef(value: unknown): value is NamespaceDef {
     return true;
   }
 
-  return typeof value === 'object'
-      && typeof (value as Partial<NamespaceDef>).url === 'string'
-      && typeof (value as Partial<NamespaceDef>).alias === 'string'
-      && Array.isArray((value as Partial<NamespaceDef>).aliases)
-      && typeof (value as Partial<NamespaceDef>).name === 'function';
+  return (
+    typeof value === 'object'
+    && typeof (value as Partial<NamespaceDef>).url === 'string'
+    && typeof (value as Partial<NamespaceDef>).alias === 'string'
+    && Array.isArray((value as Partial<NamespaceDef>).aliases)
+    && typeof (value as Partial<NamespaceDef>).name === 'function'
+  );
 }
 
 /**

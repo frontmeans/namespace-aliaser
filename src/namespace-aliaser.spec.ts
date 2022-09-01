@@ -7,7 +7,6 @@ import { SVG__NS, XMLNS__NS } from './namespaces';
 import { xml__naming } from './namings';
 
 describe('NamespaceAliaser', () => {
-
   let nsAliaser: NamespaceAliaser;
 
   beforeEach(() => {
@@ -22,21 +21,18 @@ describe('NamespaceAliaser', () => {
     expect(nsAliaser(new NamespaceDef('other/url', 'test', 'other'))).toBe('other');
   });
   it('uses registered alias', () => {
-
     const ns = new NamespaceDef('test/url', 'test');
 
     nsAliaser(ns);
     expect(nsAliaser(ns)).toBe('test');
   });
   it('generates unique alias if preferred one is absent', () => {
-
     const ns = new NamespaceDef('test/url', 'test');
     const alias = nsAliaser(ns);
 
     expect(nsAliaser(ns)).toBe(alias);
   });
   it('generates unique alias if preferred one is occupied', () => {
-
     const ns = new NamespaceDef('test/url', 'test');
     const alias = nsAliaser(ns);
 
@@ -53,7 +49,6 @@ describe('NamespaceAliaser', () => {
   });
 
   describe('context entry', () => {
-
     let cxBuilder: CxBuilder;
 
     beforeEach(() => {

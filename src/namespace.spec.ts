@@ -4,7 +4,6 @@ import { NamespaceDef } from './namespace-def';
 import type { Naming } from './naming';
 
 describe('NamespaceDef', () => {
-
   let ns: NamespaceDef;
   let naming: { [K in keyof Naming]: Mock<Naming[K]> };
 
