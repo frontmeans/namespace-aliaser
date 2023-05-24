@@ -26,6 +26,7 @@
     "types": "./dist/namespace-aliaser.d.ts",
     "default": "./dist/namespace-aliaser.js"
   },
+  "sideEffects": false,
   "dependencies": {
     "@proc7ts/context-values": "^7.1.0"
   },
